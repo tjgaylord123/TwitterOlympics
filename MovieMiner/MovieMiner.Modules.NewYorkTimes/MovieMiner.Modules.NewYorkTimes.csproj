@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DC0C2409-1FE3-4F06-A094-7C0EF8BECAE7}</ProjectGuid>
+    <ProjectGuid>{EF966091-DA35-4951-8159-34CF398454EE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MovieMiner.Interfaces</RootNamespace>
-    <AssemblyName>MovieMiner.Interfaces</AssemblyName>
+    <RootNamespace>MovieMiner.Modules.NewYorkTimes</RootNamespace>
+    <AssemblyName>MovieMiner.Modules.NewYorkTimes</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,9 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\IAPIClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Storage\IStorageClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieMiner.Interfaces\MovieMiner.Interfaces.csproj">
+      <Project>{dc0c2409-1fe3-4f06-a094-7c0ef8becae7}</Project>
+      <Name>MovieMiner.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
