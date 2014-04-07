@@ -3,14 +3,18 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.IO;
 using System.Reflection;
-using MovieMiner.Console.Annotations;
+using System.Threading.Tasks;
+using Autofac;
+using Autofac.Core;
+using MovieMiner.DiscoveryHost.Controllers;
 using MovieMiner.Interfaces.Modules;
+using MovieMiner.Interfaces.Storage;
 
-namespace MovieMiner.Console.Discovery
+namespace MovieMiner.DiscoveryHost
 {
-    internal class DiscoverModules
+    public class DiscoverModules
     {
-        [ImportMany(typeof(IDataModule)), UsedImplicitly]
+        [ImportMany(typeof(IDataModule))]
         private IEnumerable<IDataModule> _modules;
 
         public DiscoverModules()
@@ -31,9 +35,21 @@ namespace MovieMiner.Console.Discovery
             container.ComposeParts(this);
         }
 
-        public IEnumerable<IDataModule> Modules
+        public void Start()
         {
-            get { return _modules; }
+
+            foreach (var module in _modules)
+            {
+                IDataModule closureSafeModule = module;
+                var task = Task.Run(async () =>
+                {
+                    var parameters = new Parameter[] { new NamedParameter("specificFolder", closureSafeModule.ModuleName) };
+                    await closureSafeModule.StartModule(
+                            DependenciesController.Instance.Container.Resolve<IStorageClient>(parameters));
+                    closureSafeModule.Dispose();
+                });
+                task.Wait();
+            }
         }
     }
 }

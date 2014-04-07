@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Autofac;
 using MovieMiner.Interfaces.Storage;
 using MovieMiner.Storage.Local;
 
-namespace MovieMiner.Console.Controllers
+namespace MovieMiner.DiscoveryHost.Controllers
 {
     public class DependenciesController
     {

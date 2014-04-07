@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E447EE94-F49E-4C45-B5C7-66D29BDE0E66}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{95625BF3-DA8A-44F2-9C73-F3050E48245B}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MovieMiner.Console</RootNamespace>
-    <AssemblyName>MovieMiner.Console</AssemblyName>
+    <RootNamespace>MovieMiner.DiscoveryHost</RootNamespace>
+    <AssemblyName>MovieMiner.DiscoveryHost</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,17 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Extensions">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.19\lib\net45\System.Net.Http.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Primitives">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.19\lib\net45\System.Net.Http.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,42 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Controllers\DependenciesController.cs" />
+    <Compile Include="DiscoverModules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MovieMiner.DiscoveryHost\MovieMiner.DiscoveryHost.csproj">
-      <Project>{95625bf3-da8a-44f2-9c73-f3050e48245b}</Project>
-      <Name>MovieMiner.DiscoveryHost</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MovieMiner.Interfaces\MovieMiner.Interfaces.csproj">
       <Project>{dc0c2409-1fe3-4f06-a094-7c0ef8becae7}</Project>
       <Name>MovieMiner.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MovieMiner.Modules.NewYorkTimes\MovieMiner.Modules.NewYorkTimes.csproj">
-      <Project>{ef966091-da35-4951-8159-34cf398454ee}</Project>
-      <Name>MovieMiner.Modules.NewYorkTimes</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MovieMiner.Modules.RottenTomatoes\MovieMiner.Modules.RottenTomatoes.csproj">
-      <Project>{ce455c50-600c-48a2-8d3e-f8c3f92d0ef8}</Project>
-      <Name>MovieMiner.Modules.RottenTomatoes</Name>
     </ProjectReference>
     <ProjectReference Include="..\MovieMiner.Storage\MovieMiner.Storage.csproj">
       <Project>{9a6ed01c-734d-4718-8242-f7ea2f4ccaee}</Project>
       <Name>MovieMiner.Storage</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
-  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
-    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
-    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
