@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blackjack · moviedata</title>
+
+	<link rel="stylesheet" type="text/css" href="css/stylebj.css" />
+    
+</head>
+
+
+
+
+<body id="page">
+<ul class="cb-slideshow">
+	<li><span>Image 07</span><div><h3 style="color:black;">BLACK·JACK</h3></div></li>
+	<li><span>Image 08</span><div><h3 style="color:#9e655a;"></h3></div></li>
+	<li><span>Image 09</span><div><h3 style="color:#010101;"></h3></div></li>
+	<li><span>Image 10</span><div><h3 style="color:#a59585;"></h3></div></li>
+	<li><span>Image 11</span><div><h3 style="color:#97aec8;"></h3></div></li>
+    <li><span>Image 12</span><div><h3 style="color:#af9047;"></h3></div></li>
+</ul>
+
+
+<div class="wrapper">
+<div id="container">
+<body class="home page page-id-4 page-template-default">
+<header class="banner navbar navbar-static-top" role="banner">
+<div class="navbar-inner">
+<a class="brand" href="index.html"></a>
+<nav class="nav-main nav-collapse" role="navigation">
+	<ul id="menu-primary-navigation" class="nav top-nav">
+		<li id>
+			<a href="default.asp">
+			</a	><li>
+		<li id>
+			<a style="font-weight:bold;font-size:.9em;" href="http://redwood.colorado.edu/syne7651.blackjack2.html" >blackjack · movies</a></li>
+		<li id>
+			<a href="http://redwood.colorado.edu/syne7651/dm2/about.html" >about</a></li>
+		<li id>
+			<a href="http://redwood.colorado.edu/syne7651/dm2/survey.html" >survey</a></li>
+		<li id>
+			<a href="http://redwood.colorado.edu/syne7651/dm2/search.html" >search</a></li>
+        <li id> 
+      		<a href="https://twitter.com/sydneysue93" ><div id="image3"><img src="images/twitter.png" width="30px" height="auto" ></a></li>
+        <li id> 
+			<a href="https://www.facebook.com/sydney.a.nelson.3" ><div id="image2"><img src="images/fb.png" width="auto" height="22px"></a></li>
+      	<li id>
+            <a href="http://redwood.colorado.edu/syne7651/dm2/project3.html" ><div id="image1"><img src="images/mail.png" width="30px" height="auto" ></a></li>
+        </div>
+      
+	</ul>		        
+</nav>
+
+	</body>
+</html>
