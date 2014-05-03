@@ -1,0 +1,34 @@
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc10.min.js"></script>
+
+<script>
+        AWS.config.accessKeyId = 'AKIAJNZBFEQORVJAIXNA';
+        AWS.config.secretAccessKey = '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';
+        AWS.config.region = 'us-west-2';
+
+        // create the AWS.Request object
+        var bucket = new AWS.S3({ params: { Bucket: 'some.bucket' } });
+        bucket.listObjects(function (err, data) {
+            if (err) {
+                document.getElementById('status').innerHTML =
+                  'Could not load objects from S3';
+            } else {
+                document.getElementById('status').innerHTML =
+                  'Loaded ' + data.Contents.length + ' items from S3';
+                for (var i = 0; i < data.Contents.length; i++) {
+                    document.getElementById('objects').innerHTML +=
+                      '<li>' + data.Contents[i].Key + '</li>';
+                }
+            }
+        });
+        </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+        $.ajax({
+    'type':'GET',
+    'url':'http://s3.amazonaws.com/blackjack-movieminer/'+id,
+    'dataType':'json',
+    'success':function(msg) {
+        alert(msg);
+    }
+});
+        </script>
