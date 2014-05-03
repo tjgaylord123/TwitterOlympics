@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>blackjack | movies</title>
+<link rel="stylesheet" href="stylebj.css" />
+<script type="text/javascript" src="tinybox.js"></script>
+
+<style>
+
+body {
+	font-family:"Brandon-alt","Helvetica Neue",Helvetica,Arial,
+	sans-serif;
+	font-weight:normal;
+	color: #404040;
+}
+
+.wrap {
+	width:100%;
+	margin:0 auto;
+}
+
+#main {
+	margin:0 auto !important;
+	float:none;
+}
+
+.row-fluid {
+	margin-bottom:0;
+}
+
+a,a:visited {
+	color:#bea573;
+	text-decoration:none
+}
+
+a:hover,a:focus,a:visited:hover,a:visited:focus {
+	text-decoration:none;color:#bea573;
+}
+
+a:link,a:visited:link {
+	-webkit-tap-highlight-color:rgba(0,0,0,0.3);
+}
+
+
+.fullwidthimage {
+	position:relative;
+	height:auto;
+	overflow:hidden;
+	top:0;z-index0;
+	width100%;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+}
+
+.fullwidthimage .title {
+	position:relative;
+	display:table;
+	vertical-align:middle;
+	width:100%;z-index:	1;
+}
+
+.fullwidthimage .title div {
+	display:table-cell;
+	vertical-align:middle;
+	height:60em;
+}
+
+.fullwidthimage .title div h1 {
+	font-family:"Brandon-alt","Helvetica Neue",Helvetica,Arial,
+	sans-serif;
+	font-weight:normal;
+	font-style:normal;
+	display:block;
+	max-width:1040px;
+	margin:0 auto;
+	color:white;
+	text-align:center;
+	font-size:3.5em;
+	letter-spacing:0.1em;
+	text-transform:uppercase;
+	line-height:1.05em;
+}
+
+
+.banner {
+	top:0;
+	padding-left:2em;
+	background:white;
+	z-index:20;
+	width:100%;
+	color:#404040;
+}
+
+.banner, .touch .banner {
+	position:fixed !important;
+}
+
+.banner .container {
+	width:100%;
+	padding:0;
+}
+
+.banner .navbar-inner {
+	margin:0;
+	padding-bottom:1.4em;
+}
+
+.banner .navbar-inner .banner .navbar-inner .brand img {
+	height:1.75em;
+	float:left;
+}
+
+.banner .navbar-inner.nav {
+	margin:0;
+	background-color:transparent;
+	text-align:right;
+}
+
+
+
+.banner .navbar-inner .nav li {
+	float:none;
+	display:inline;
+}
+
+.banner .navbar-inner .nav li a {
+	font-family:"Brandon-alt","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight:normal;
+	font-style:normal;
+	padding:0;
+	text-transform:uppercase;
+	letter-spacing:0.1em;
+	font-size:0.75em;
+	line-height:1em;
+	color:#404040;
+	background:transparent;
+	text-shadow:none;
+}
+
+.banner .navbar-inner .nav li a:hover {
+	background:white;
+	color:#bea573;
+}
+
+
+.footer {
+	clear:both;
+}
+
+.footer #inner-footer {
+	margin-right:-1.5em;
+	padding:0;
+}
+
+.footer .nav {
+	text-align:right;
+	text-transform:uppercase;
+	background:transparent;
+}
+
+.footer .nav li {
+	float:none;
+	display:inline;
+}
+
+.footer .nav li a {
+	font-family:"Brandon-alt","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:normal;
+	font-style:normal;
+	letter-spacing:0.1em;
+	font-size:1em;
+	line-height:1em;
+	color:#404040;
+	background:transparent;
+	text-shadow:none;
+}
+
+.footer a:hover {
+	color:#cdccca !important;
+}
+
+.page-id-8 .fullwidthimage {
+	position:relative;
+}
+
+.page-id-4 .fullwidthimage {
+	position:relative;
+}
+
+
+@media only screen and (min-width: 1025px){.fullwidthimage{background-attachment:fixed;position:absolute}}
+@media only screen and (max-width: 1024px){.fullwidthimage.home-logo .title div
+h1{max-width:480px;font-size:3em}
+.span6.rhcol{float:none;margin:0;width:100%}}
+@media only screen and (max-width: 768px){body{font-size:90%}
+.wrap{width:85% !important}
+.fullwidthimage.home-logo .title div h1{max-width:600px;font-size:4em}
+
+</style>
+
+
+		
+
+</head>
+
+
+
+<body>
+<div id="container">
+<body class="home page page-id-4 page-template-default">
+<header class="banner navbar navbar-static-top" role="banner">
+<div class="navbar-inner">
+		<!-- logo -->  
+<a class="brand" href="index.html">  	
+<img src="" alt="" />
+</a>
+		
+		      
+<nav class="nav-main nav-collapse" role="navigation">
+<ul id="menu-primary-navigation" class="nav top-nav" >
+		<!-- about -->
+<li style=" font-weight:bold; font-size:1.25em;">MOVIE DATA  <br></li>  
+<li style="color:#404040; font-weight:100;">BLACKJACK</li>   
+</nav>
+</div>
+</header>
+		<!-- end header -->
+		
+		
+		
+  		<!-- image 1 & title css -->
+<div class="fullwidthimage" style="background-image: url(images/7.jpg) !important;">
+<div class="title">
+<div>
+	<h1 style="color:#404040;">MOVIE DATA</h1>
+</div>
+</div>
+</div>
+
+
+
+	
+		
+			<!-- image 2 & title css -->		
+<div class="fullwidthimage" style="background-image: url(images/8.jpg) !important;">
+<div class="title">
+<div>
+	<h1 style="color:#404040;"><nav style><ul><li onclick="TINY.box.show({iframe:'advanced4.html',width:750,height:650})">ITEM 1</li></ul></nav></h1>
+</div>
+</div>
+</div>
+<container>
+   <scroller>
+    <satellite/>
+
+<!-- <div class="wrap container-fluid"> 
+<div class="row-fluid">
+</div>		<!-- end #row-fluid -->
+</div>		<!-- end #wrap  container-fluid -->
+
+
+
+
+<div class="fullwidthimage" style="background-image: url(images/9.jpg) !important;">
+<div class="title">
+<div>
+	<h1 style="color:#404040;"><nav><ul><li onclick="TINY.box.show({iframe:'advanced5.html',width:750,height:650})">ITEM 2</li></ul></nav></h1>
+</div>
+</div>
+</div>
+
+
+<!-- <div class="wrap container-fluid"> 
+<p style="text-align: center;">
+</p>      
+<div class="row-fluid">
+</div>		<!-- end #row-fluid -->
+</div>		<!-- end #wrap  container-fluid -->
+
+
+
+
+
+
+<div class="fullwidthimage" style="background-image: url(images/10.jpg) !important;">
+<div class="title">
+<div>
+	<h1 style="color:#404040;"><nav style><ul><li onclick="TINY.box.show({iframe:'advanced6.html',width:750,height:650})">ITEM 3</li></ul></nav></h1>
+</div>
+</div>
+</div>
+
+
+
+
+<!-- <div class="wrap container-fluid"> 
+<p style="text-align: center;"><br> 
+</p>  
+<p style="text-align: left;"></p>     
+<div class="row-fluid">
+</div>		<!-- end #row-fluid -->
+</div>		<!-- end #wrap  container-fluid -->
+
+
+
+
+
+
+
+<div class="fullwidthimage" style="background-image: url(images/11.jpg) !important;">
+<div class="title">
+<div>
+	<h1></h1>
+</div>
+</div>
+</div>
+
+<div class="wrap container-fluid"> 
+<p style="text-align: center;"></p>
+</p>      
+<div class="row-fluid">
+</div>		<!-- end #row-fluid -->
+</div>		<!-- end #wrap  container-fluid -->
+
+
+
+
+
+
+		<!-- footer -->			
+<footer class="footer">
+<div id="inner-footer" class="wrap">
+<ul id="menu-footer-pages" class="nav footer-nav">
+
+<nav>
+<li id>
+	<a style="font-weight:100;" href="http://redwood.colorado.edu/syne7651/dm2/about.html" ><br>Taylor Kohn<br>Trevor Gaylord<br>Noelle Beaujon<br>Sydney Nelson<br><br></li>
+<ul>				
+</nav>
+</div> 		<!-- end #inner-footer -->
+</footer>
+</div> 		<!-- end #container -->
+
+
+
+</body>
+</html>
