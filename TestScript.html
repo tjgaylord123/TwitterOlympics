@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>connect to aws</title>
+        <script src="jquery.min.js"></script>
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc.14.min.js"></script>
+    </head>
+
+
+<body>
+<p>If you click on the "Hide" button, I will disappear.</p>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+<script type="text/javascript">
+  // See the Configuring section to configure credentials in the SDK
+        AWS.config.accessKeyId = 'AKIAJNZBFEQORVJAIXNA';
+        AWS.config.secretAccessKey = 'uZiqn0kZEAmjMxiFOcaby4G2a+IgO1VKJTOxw92U';
+
+		  // Configure your region
+		  AWS.config.region = 'us-west-2';
+
+</script>
+
+<!-- <div id="status"></div>
+<ul id="objects"></ul> -->
+
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+
+ <script type="text/javascript">
+//   var bucket = new AWS.S3({params: {Bucket: 'blackjack-movieminer'}});
+//   bucket.listObjects(function (err, data) {
+//     if (err) {
+//       document.getElementById('status').innerHTML =
+//         'Could not load objects from S3';
+//     } else {
+//       document.getElementById('status').innerHTML =
+//         'Loaded ' + data.Contents.length + ' items from S3';
+//       for (var i = 0; i < data.Contents.length; i++) {
+//         document.getElementById('objects').innerHTML +=
+//           '<li>' + data.Contents[i].Key + '</li>';
+//       }
+//     }
+//   });
+// </script>
+
+</body>
+</html>
