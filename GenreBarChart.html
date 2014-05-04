@@ -34,7 +34,7 @@
   Key: 'RottenTomatoes/Output/genre_analysis.json' ,// required
 
 };
-
+var response = 1;
 response =bucket.getObject(params, function(err, data) {
   if (err) {
   console.log(err, err.stack); 
@@ -44,8 +44,11 @@ response =bucket.getObject(params, function(err, data) {
   else{
       // successful response
 
+       //document.getElementById('status').innerHTML =
+       //data.Body.toString();
        obj = jQuery.parseJSON(data.Body.toString());
        console.log(obj);
+       //display_title = obj.results[0].display_title;
 
     
 	var GenreData = {
@@ -79,6 +82,21 @@ response =bucket.getObject(params, function(err, data) {
 
   }
 });
+
+
+  // bucket.listObjects(function (err, data) {
+  //   if (err) {
+  //     document.getElementById('status').innerHTML =
+  //       'Could not load objects from S3';
+  //   } else {
+  //     document.getElementById('status').innerHTML =
+  //       'Loaded ' + data.Contents.length + ' items from S3';
+  //     for (var i = 0; i < data.Contents.length; i++) {
+  //       document.getElementById('objects').innerHTML +=
+  //         '<li>' + data.Contents[i].Key + '</li>';
+  //     }
+  //   }
+  // });
 // </script>
 
 </html>
