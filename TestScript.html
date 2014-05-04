@@ -8,9 +8,7 @@
 
 
 <body>
-<p>If you click on the "Hide" button, I will disappear.</p>
-<button id="hide">Hide</button>
-<button id="show">Show</button>
+<h1>lalala</h1>
 
 <script type="text/javascript">
   // See the Configuring section to configure credentials in the SDK
@@ -22,35 +20,58 @@
 
 </script>
 
-<!-- <div id="status"></div>
-<ul id="objects"></ul> -->
+<div id="status"></div>
+<ul id="objects"></ul>
 
-<script>
-$(document).ready(function(){
-  $("#hide").click(function(){
-    $("p").hide();
-  });
-  $("#show").click(function(){
-    $("p").show();
-  });
-});
-</script>
 
  <script type="text/javascript">
-//   var bucket = new AWS.S3({params: {Bucket: 'blackjack-movieminer'}});
-//   bucket.listObjects(function (err, data) {
-//     if (err) {
-//       document.getElementById('status').innerHTML =
-//         'Could not load objects from S3';
-//     } else {
-//       document.getElementById('status').innerHTML =
-//         'Loaded ' + data.Contents.length + ' items from S3';
-//       for (var i = 0; i < data.Contents.length; i++) {
-//         document.getElementById('objects').innerHTML +=
-//           '<li>' + data.Contents[i].Key + '</li>';
-//       }
-//     }
-//   });
+ var bucket = new AWS.S3({params: {Bucket: 'blackjack-movieminer'}});
+
+ var params = {
+  Bucket: 'blackjack-movieminer', // required
+  Key: 'Test.txt' ,// required
+  // IfMatch: 'STRING_VALUE',
+  // IfModifiedSince: new Date || 'Wed Dec 31 1969 16:00:00 GMT-0800 (PST)' || 123456789,
+  // IfNoneMatch: 'STRING_VALUE',
+  // IfUnmodifiedSince: new Date || 'Wed Dec 31 1969 16:00:00 GMT-0800 (PST)' || 123456789,
+  // Range: 'STRING_VALUE',
+  // ResponseCacheControl: 'STRING_VALUE',
+  // ResponseContentDisposition: 'STRING_VALUE',
+  // ResponseContentEncoding: 'STRING_VALUE',
+  // ResponseContentLanguage: 'STRING_VALUE',
+  // ResponseContentType: 'STRING_VALUE',
+  // ResponseExpires: new Date || 'Wed Dec 31 1969 16:00:00 GMT-0800 (PST)' || 123456789,
+  // VersionId: 'STRING_VALUE',
+};
+var response = bucket.getObject(params, function(err, data) {
+  if (err) {
+  console.log(err, err.stack); 
+   document.getElementById('status').innerHTML =
+       'Could not load objects from S3';
+  }// an error occurred
+  else{
+
+      console.log(data.Body.toString());   
+         document.getElementById('status').innerHTML =
+       'in else';        // successful response
+
+  }
+});
+
+
+  // bucket.listObjects(function (err, data) {
+  //   if (err) {
+  //     document.getElementById('status').innerHTML =
+  //       'Could not load objects from S3';
+  //   } else {
+  //     document.getElementById('status').innerHTML =
+  //       'Loaded ' + data.Contents.length + ' items from S3';
+  //     for (var i = 0; i < data.Contents.length; i++) {
+  //       document.getElementById('objects').innerHTML +=
+  //         '<li>' + data.Contents[i].Key + '</li>';
+  //     }
+  //   }
+  // });
 // </script>
 
 </body>
