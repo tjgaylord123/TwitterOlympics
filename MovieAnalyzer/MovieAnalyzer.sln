@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieAnalyzer.Console", "MovieAnalyzer.Console\MovieAnalyzer.Console.csproj", "{F55DE01E-1194-4281-A28B-D1C8A2FF4B27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieAnalyzer.Interfaces", "MovieAnalyzer.Interfaces\MovieAnalyzer.Interfaces.csproj", "{AB7262A5-9722-42A2-903D-3CE4112A8837}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieAnalyzer.Modules.RottenTomatoes", "MovieAnalyzer.Modules.RottenTomatoes\MovieAnalyzer.Modules.RottenTomatoes.csproj", "{FF7EF8D7-FEAD-4289-AAB3-D87D3D7DE219}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieAnalyzer.Storage", "MovieAnalyzer.Storage\MovieAnalyzer.Storage.csproj", "{4B60EF6E-7488-4285-832F-7335D0CF5899}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F55DE01E-1194-4281-A28B-D1C8A2FF4B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55DE01E-1194-4281-A28B-D1C8A2FF4B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55DE01E-1194-4281-A28B-D1C8A2FF4B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55DE01E-1194-4281-A28B-D1C8A2FF4B27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB7262A5-9722-42A2-903D-3CE4112A8837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB7262A5-9722-42A2-903D-3CE4112A8837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB7262A5-9722-42A2-903D-3CE4112A8837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB7262A5-9722-42A2-903D-3CE4112A8837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF7EF8D7-FEAD-4289-AAB3-D87D3D7DE219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF7EF8D7-FEAD-4289-AAB3-D87D3D7DE219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF7EF8D7-FEAD-4289-AAB3-D87D3D7DE219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF7EF8D7-FEAD-4289-AAB3-D87D3D7DE219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B60EF6E-7488-4285-832F-7335D0CF5899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B60EF6E-7488-4285-832F-7335D0CF5899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B60EF6E-7488-4285-832F-7335D0CF5899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B60EF6E-7488-4285-832F-7335D0CF5899}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
