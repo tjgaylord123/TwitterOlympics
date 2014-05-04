@@ -10,14 +10,11 @@ for line in sys.stdin:
     # words = line.split()
 
     
-    newyorktimes = line
-    nyt_results = newyorktimes['results']
-	res = nyt_results[0]
-	# title = res['display_title']
-	thousand = res['thousand_best']
-	# print thousand
+    nyt_results = line['results']
+    res = nyt_results[0]
+    mpaa = res['mpaa_rating']
 
-	print '%s\t%s' % (thousand, "1")
+	print '%s\t%s' % (mpaa, "1")
 
 
 
