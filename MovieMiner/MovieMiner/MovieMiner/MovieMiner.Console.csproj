@@ -67,10 +67,6 @@
       <Project>{dc0c2409-1fe3-4f06-a094-7c0ef8becae7}</Project>
       <Name>MovieMiner.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MovieMiner.Modules.NewYorkTimes\MovieMiner.Modules.NewYorkTimes.csproj">
-      <Project>{ef966091-da35-4951-8159-34cf398454ee}</Project>
-      <Name>MovieMiner.Modules.NewYorkTimes</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MovieMiner.Modules.RottenTomatoes\MovieMiner.Modules.RottenTomatoes.csproj">
       <Project>{ce455c50-600c-48a2-8d3e-f8c3f92d0ef8}</Project>
       <Name>MovieMiner.Modules.RottenTomatoes</Name>
