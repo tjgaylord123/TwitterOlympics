@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>connect to aws</title>
+        <script src="jquery.min.js"></script>
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc.14.min.js"></script>
+		<script src='Chart.min.js'></script>
+
+    </head>
+
+
+<body>
+<canvas id="three" width="600" height="400"></canvas>
+<canvas id="four" width="600" height="400"></canvas>
+<canvas id="five" width="600" height="400"></canvas>
+<canvas id="six" width="600" height="400"></canvas>
+<canvas id="seven" width="600" height="400"></canvas>
+<canvas id="eight" width="600" height="400"></canvas>
+<canvas id="nine" width="600" height="400"></canvas>
+<canvas id="ten" width="600" height="400"></canvas>
+<canvas id="el" width="600" height="400"></canvas>
+
+</body>
+
+<script type="text/javascript">
+  // See the Configuring section to configure credentials in the SDK
+        AWS.config.accessKeyId = 'AKIAJNZBFEQORVJAIXNA';
+        AWS.config.secretAccessKey = 'uZiqn0kZEAmjMxiFOcaby4G2a+IgO1VKJTOxw92U';
+
+		  // Configure your region
+		  AWS.config.region = 'us-west-2';
+
+</script>
+
+
+
+
+ <script type="text/javascript">
+ var bucket = new AWS.S3({params: {Bucket: 'blackjack-movieminer'}});
+
+ var params = {
+  Bucket: 'blackjack-movieminer', // required
+  Key: 'AnalysisOutput/thousands_list.json' ,// required
+
+};
+
+response =bucket.getObject(params, function(err, data) {
+  if (err) {
+  console.log(err, err.stack); 
+   // document.getElementById('status').innerHTML =
+   //     'Could not load objects from S3';
+  }// an error occurred
+  else{
+      // successful response
+
+       //document.getElementById('status').innerHTML =
+       //data.Body.toString();
+       obj = jQuery.parseJSON(data.Body.toString());
+
+       //display_title = obj.results[0].display_title;
+var thirtiesY=0;
+var thirtiesN=0;
+for (var i =1930;i<1940;i++){
+  thirtiesY += obj[i].Yes.Count;
+}
+
+for (var i =1930;i<1940;i++){
+  thirtiesN += obj[i].No.Count;
+}
+
+var fourtiesY=0;
+var fourtiesN=0;
+for (var i =1940;i<1950;i++){
+  fourtiesY += obj[i].Yes.Count;
+}
+
+for (var i =1940;i<1950;i++){
+  fourtiesN += obj[i].No.Count;
+}
+
+var fiftiesY=0;
+var fiftiesN=0;
+for (var i =1950;i<1960;i++){
+  fiftiesY += obj[i].Yes.Count;
+}
+
+for (var i =1950;i<1960;i++){
+  fiftiesN += obj[i].No.Count;
+}
+
+var sixY=0;
+var sixN=0;
+for (var i =1960;i<1970;i++){
+  sixY += obj[i].Yes.Count;
+}
+
+for (var i =1960;i<1970;i++){
+  sixN += obj[i].No.Count;
+}
+
+var sevY=0;
+var sevN=0;
+for (var i =1970;i<1980;i++){
+  sevY += obj[i].Yes.Count;
+}
+
+for (var i =1970;i<1980;i++){
+  sevN += obj[i].No.Count;
+}
+
+var eightY=0;
+var eightN=0;
+for (var i =1980;i<1990;i++){
+  eightY += obj[i].Yes.Count;
+}
+
+for (var i =1980;i<1990;i++){
+  eightN += obj[i].No.Count;
+}
+
+var nineY=0;
+var nineN=0;
+for (var i =1990;i<2000;i++){
+  nine += obj[i].Yes.Count;
+}
+
+for (var i =1990;i<2000;i++){
+  nineN += obj[i].No.Count;
+}
+
+var tenY=0;
+var tenN=0;
+for (var i =2000;i<2010;i++){
+  tenY += obj[i].Yes.Count;
+}
+
+for (var i =2000;i<2010;i++){
+  tenN += obj[i].No.Count;
+}
+
+var elY=0;
+var elN=0;
+for (var i =2010;i<2015;i++){
+  elY += obj[i].Yes.Count;
+}
+
+for (var i =2010;i<2015;i++){
+  elN += obj[i].No.Count;
+}
+
+    
+	var threeD = [
+    {
+        value: thirtiesY,
+        color:"#33CC00"
+    },
+    {
+        value : thirtiesN,
+        color : "#FF0000"
+    }          
+]
+
+    var three = document.getElementById('three').getContext('2d');
+    new Chart(three).Pie(threeD);
+
+      var fourD = [
+    {
+        value: fourtiesY,
+        color:"#33CC00"
+    },
+    {
+        value : fourtiesN,
+        color : "#FF0000"
+    }          
+]
+
+    var four = document.getElementById('four').getContext('2d');
+    new Chart(four).Pie(fourD);
+
+    var fiveD = [
+    {
+        value: fiftiesY,
+        color:"#33CC00"
+    },
+    {
+        value : fiftiesN,
+        color : "#FF0000"
+    }          
+]
+
+    var five = document.getElementById('five').getContext('2d');
+    new Chart(five).Pie(fiveD);
+
+    var sixD = [
+    {
+        value: sixY,
+        color:"#33CC00"
+    },
+    {
+        value : sixN,
+        color : "#FF0000"
+    }          
+]
+
+    var six = document.getElementById('six').getContext('2d');
+    new Chart(six).Pie(sixD);
+
+    var sevD = [
+    {
+        value: sevY,
+        color:"#33CC00"
+    },
+    {
+        value : sevN,
+        color : "#FF0000"
+    }          
+]
+
+    var sev = document.getElementById('seven').getContext('2d');
+    new Chart(sev).Pie(sevD);
+
+    var eightD = [
+    {
+        value: eightY,
+        color:"#33CC00"
+    },
+    {
+        value : eightN,
+        color : "#FF0000"
+    }          
+]
+
+    var eight = document.getElementById('eight').getContext('2d');
+    new Chart(eight).Pie(eightD);
+
+
+      var nineD = [
+    {
+        value: nineY,
+        color:"#33CC00"
+    },
+    {
+        value : nineN,
+        color : "#FF0000"
+    }          
+]
+    var nine = document.getElementById('nineD').getContext('2d');
+    new Chart(ine).Pie(nineD);
+
+
+      var tenD = [
+    {
+        value: tenY,
+        color:"#33CC00"
+    },
+    {
+        value : tenN,
+        color : "#FF0000"
+    }          
+]
+    var ten = document.getElementById('tenD').getContext('2d');
+    new Chart(ten).Pie(tenD);
+
+      var elD = [
+    {
+        value: elY,
+        color:"#33CC00"
+    },
+    {
+        value : elN,
+        color : "#FF0000"
+    }          
+]
+    var el = document.getElementById('elD').getContext('2d');
+    new Chart(el).Pie(elD);
+
+
+  }
+});
+
+
+  // bucket.listObjects(function (err, data) {
+  //   if (err) {
+  //     document.getElementById('status').innerHTML =
+  //       'Could not load objects from S3';
+  //   } else {
+  //     document.getElementById('status').innerHTML =
+  //       'Loaded ' + data.Contents.length + ' items from S3';
+  //     for (var i = 0; i < data.Contents.length; i++) {
+  //       document.getElementById('objects').innerHTML +=
+  //         '<li>' + data.Contents[i].Key + '</li>';
+  //     }
+  //   }
+  // });
+// </script>
+
+</html>
