@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using MovieMiner.DiscoveryHost;
+using MovieMiner.Console.Modules;
 
 namespace MovieMiner.Console
 {

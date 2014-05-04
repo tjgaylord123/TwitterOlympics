@@ -1,7 +1,5 @@
-﻿using System.Net.Mime;
-using System.ServiceProcess;
+﻿using System.ServiceProcess;
 using System.Threading;
-using MovieMiner.DiscoveryHost;
 
 namespace MovieMiner.WindowsService
 {

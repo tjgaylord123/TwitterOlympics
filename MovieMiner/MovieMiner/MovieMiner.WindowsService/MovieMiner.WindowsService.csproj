@@ -80,10 +80,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MovieMiner.DiscoveryHost\MovieMiner.DiscoveryHost.csproj">
-      <Project>{95625bf3-da8a-44f2-9c73-f3050e48245b}</Project>
-      <Name>MovieMiner.DiscoveryHost</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MovieMiner.Interfaces\MovieMiner.Interfaces.csproj">
       <Project>{dc0c2409-1fe3-4f06-a094-7c0ef8becae7}</Project>
       <Name>MovieMiner.Interfaces</Name>

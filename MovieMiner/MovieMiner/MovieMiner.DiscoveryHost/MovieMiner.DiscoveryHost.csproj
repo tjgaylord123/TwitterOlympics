@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\DependenciesController.cs" />
     <Compile Include="DiscoverModules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

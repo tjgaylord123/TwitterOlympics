@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using MovieMiner.Interfaces.Modules;
 using MovieMiner.Storage.AWS;
 
-namespace MovieMiner.DiscoveryHost
+namespace MovieMiner.Console.Modules
 {
     public class DiscoverModules
     {
@@ -41,11 +41,7 @@ namespace MovieMiner.DiscoveryHost
 
         public void Start()
         {
-            Parallel.ForEach(_modules, module =>
-            {
-                module.StartModule<AWSStorageClient>(module.ModuleName);
-                module.Dispose();
-            });
+            Parallel.ForEach(_modules, module => module.StartModule<AWSStorageClient>(module.ModuleName));
         }
     }
 }

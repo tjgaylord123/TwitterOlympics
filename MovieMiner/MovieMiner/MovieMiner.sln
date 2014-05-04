@@ -13,10 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMiner.Storage", "Movie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMiner.Modules.NewYorkTimes", "MovieMiner.Modules.NewYorkTimes\MovieMiner.Modules.NewYorkTimes.csproj", "{EF966091-DA35-4951-8159-34CF398454EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMiner.WindowsService", "MovieMiner.WindowsService\MovieMiner.WindowsService.csproj", "{41704376-9700-41B1-B694-C1EA201F7911}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMiner.DiscoveryHost", "MovieMiner.DiscoveryHost\MovieMiner.DiscoveryHost.csproj", "{95625BF3-DA8A-44F2-9C73-F3050E48245B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,26 +73,6 @@ Global
 		{EF966091-DA35-4951-8159-34CF398454EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EF966091-DA35-4951-8159-34CF398454EE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EF966091-DA35-4951-8159-34CF398454EE}.Release|x86.ActiveCfg = Release|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Release|Any CPU.Build.0 = Release|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{41704376-9700-41B1-B694-C1EA201F7911}.Release|x86.ActiveCfg = Release|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{95625BF3-DA8A-44F2-9C73-F3050E48245B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

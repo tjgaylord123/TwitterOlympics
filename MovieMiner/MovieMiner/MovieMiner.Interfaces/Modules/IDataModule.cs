@@ -1,12 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using MovieMiner.Interfaces.Storage;
+﻿using MovieMiner.Interfaces.Storage;
 
 namespace MovieMiner.Interfaces.Modules
 {
-    public interface IDataModule : IDisposable
+    public interface IDataModule
     {
-        Task StartModule(IStorageClient storageClient);
+        void StartModule<TStorage>(string directory) where TStorage : IStorageClient;
 
         string ModuleName { get; }
     }
