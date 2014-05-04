@@ -28,7 +28,7 @@ namespace MovieMiner.Modules.RottenTomatoes
 
             // Rotten Tomatoes does not support querying by date, so query by alphabetical letter for now...
             char letter = 'A';
-            do
+            while (letter <= 'Z')
             {
                 var response =
                     await _apiClient.GetAsync(
@@ -39,7 +39,7 @@ namespace MovieMiner.Modules.RottenTomatoes
                     await storageClient.WriteFileToStorageAsync(jsonBody, Convert.ToString(letter), FileType.Json);
                 }
                 letter++;
-            } while (letter != 'Z');
+            }
         }
 
         public string ModuleName
