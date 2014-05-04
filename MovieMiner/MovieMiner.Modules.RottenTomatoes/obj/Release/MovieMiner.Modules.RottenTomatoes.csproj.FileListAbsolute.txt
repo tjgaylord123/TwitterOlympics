@@ -1,0 +1,13 @@
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\bin\Release\MovieMiner.Modules.RottenTomatoes.dll.config
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\bin\Release\MovieMiner.Modules.RottenTomatoes.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\bin\Release\MovieMiner.Modules.RottenTomatoes.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\bin\Release\MovieMiner.Interfaces.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\bin\Release\System.Net.Http.Extensions.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\bin\Release\System.Net.Http.Primitives.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\bin\Release\MovieMiner.Interfaces.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\bin\Release\System.Net.Http.Extensions.xml
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\bin\Release\System.Net.Http.Primitives.xml
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\obj\Release\MovieMiner.Modules.RottenTomatoes.csproj.App.config
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\obj\Release\MovieMiner.Modules.RottenTomatoes.csprojResolveAssemblyReference.cache
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\obj\Release\MovieMiner.Modules.RottenTomatoes.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.RottenTomatoes\obj\Release\MovieMiner.Modules.RottenTomatoes.pdb

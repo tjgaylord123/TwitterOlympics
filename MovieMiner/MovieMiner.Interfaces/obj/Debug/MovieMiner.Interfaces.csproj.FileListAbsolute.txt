@@ -1,0 +1,5 @@
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Interfaces\bin\Debug\MovieMiner.Interfaces.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Interfaces\bin\Debug\MovieMiner.Interfaces.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Interfaces\obj\Debug\MovieMiner.Interfaces.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Interfaces\obj\Debug\MovieMiner.Interfaces.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Interfaces\obj\Debug\MovieMiner.Interfaces.csprojResolveAssemblyReference.cache

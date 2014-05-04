@@ -1,0 +1,13 @@
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\MovieMiner.DiscoveryHost.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\MovieMiner.DiscoveryHost.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\Autofac.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\MovieMiner.Interfaces.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\MovieMiner.Storage.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\AWSSDK.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\MovieMiner.Interfaces.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\MovieMiner.Storage.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\Autofac.xml
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\bin\Release\AWSSDK.xml
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\obj\Release\MovieMiner.DiscoveryHost.csprojResolveAssemblyReference.cache
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\obj\Release\MovieMiner.DiscoveryHost.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.DiscoveryHost\obj\Release\MovieMiner.DiscoveryHost.pdb

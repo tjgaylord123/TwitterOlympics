@@ -1,0 +1,13 @@
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\bin\Release\MovieMiner.Modules.NewYorkTimes.dll.config
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\bin\Release\MovieMiner.Modules.NewYorkTimes.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\bin\Release\MovieMiner.Modules.NewYorkTimes.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\bin\Release\MovieMiner.Interfaces.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\bin\Release\System.Net.Http.Extensions.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\bin\Release\System.Net.Http.Primitives.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\bin\Release\MovieMiner.Interfaces.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\bin\Release\System.Net.Http.Extensions.xml
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\bin\Release\System.Net.Http.Primitives.xml
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\obj\Release\MovieMiner.Modules.NewYorkTimes.csproj.App.config
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\obj\Release\MovieMiner.Modules.NewYorkTimes.csprojResolveAssemblyReference.cache
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\obj\Release\MovieMiner.Modules.NewYorkTimes.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Modules.NewYorkTimes\obj\Release\MovieMiner.Modules.NewYorkTimes.pdb

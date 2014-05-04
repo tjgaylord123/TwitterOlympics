@@ -37,8 +37,8 @@ namespace MovieMiner.Storage.AWS
                         fileName =>
                         {
                             int index = fileName.IndexOf('.');
-                            var date = DateTime.Parse(fileName.Substring(0, index));
-                            return date;
+                            DateTime date;
+                            return DateTime.TryParse(fileName.Substring(0, index), out date) ? date : DateTime.MinValue;
                         }).AddDays(1)
                 : _minDate;
         }

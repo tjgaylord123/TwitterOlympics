@@ -1,0 +1,26 @@
+﻿Installing assembly 'C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.InstallLog
+   assemblypath = C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.exe
+Installing service ScheduledService...
+Service ScheduledService has been successfully installed.
+Creating EventLog source ScheduledService in log Application...
+Committing assembly 'C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.InstallLog
+   assemblypath = C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.exe
+Installing assembly 'C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.InstallLog
+   assemblypath = C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.exe
+Installing service ScheduledService...
+Service ScheduledService has been successfully installed.
+Creating EventLog source ScheduledService in log Application...
+Committing assembly 'C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.InstallLog
+   assemblypath = C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.WindowsService\bin\Debug\MovieMiner.WindowsService.exe

@@ -27,7 +27,19 @@ namespace MovieMiner.Modules.RottenTomatoes
             _apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             // Rotten Tomatoes does not support querying by date, so query by alphabetical letter for now...
-            await new Task(() => {});
+            char letter = 'A';
+            do
+            {
+                var response =
+                    await _apiClient.GetAsync(
+                        string.Format("api/public/v1.0/movies.json?apikey={0}&q={1}", APIKey, letter));
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonBody = await response.Content.ReadAsStringAsync();
+                    await storageClient.WriteFileToStorageAsync(jsonBody, Convert.ToString(letter), FileType.Json);
+                }
+                letter++;
+            } while (letter != 'Z');
         }
 
         public string ModuleName

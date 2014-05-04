@@ -1,0 +1,10 @@
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\bin\Debug\MovieMiner.Storage.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\bin\Debug\MovieMiner.Storage.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\bin\Debug\MovieMiner.Interfaces.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\bin\Debug\MovieMiner.Interfaces.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\obj\Debug\MovieMiner.Storage.csprojResolveAssemblyReference.cache
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\obj\Debug\MovieMiner.Storage.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\obj\Debug\MovieMiner.Storage.pdb
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\bin\Debug\MovieMiner.Storage.dll.config
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\bin\Debug\AWSSDK.dll
+C:\Users\Trevor\Documents\GitHub\MovieData\MovieMiner\MovieMiner.Storage\bin\Debug\AWSSDK.xml
