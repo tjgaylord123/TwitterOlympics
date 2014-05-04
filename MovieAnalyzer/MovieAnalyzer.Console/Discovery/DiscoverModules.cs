@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.IO;
@@ -6,11 +7,10 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Core;
-using MovieAnalyzer.Console.Discovery;
 using MovieAnalyzer.Interfaces.Modules;
 using MovieAnalyzer.Interfaces.Storage;
 
-namespace MovieAnalyzer.Console
+namespace MovieAnalyzer.Console.Discovery
 {
     internal class DiscoverModules
     {
@@ -23,10 +23,13 @@ namespace MovieAnalyzer.Console
             var catalog = new AggregateCatalog();
             //Adds all the parts found in all assemblies in 
             //the same directory as the executing program
-            catalog.Catalogs.Add(
-             new DirectoryCatalog(
-              Path.GetDirectoryName(
-               Assembly.GetExecutingAssembly().Location)));
+            string assemblyName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            if (String.IsNullOrEmpty(assemblyName))
+            {
+                throw new ApplicationException("Could not reflect over running assembly.");
+            }
+
+            catalog.Catalogs.Add(new DirectoryCatalog(assemblyName));
 
             //Create the CompositionContainer with the parts in the catalog
             CompositionContainer container = new CompositionContainer(catalog);
@@ -44,7 +47,7 @@ namespace MovieAnalyzer.Console
                 var task = Task.Run(async () =>
                 {
                     var parameters = new Parameter[] { new NamedParameter("directory", closureSafeModule.ModuleName) };
-                    await closureSafeModule.BeginJobModule(DependenciesController.Instance.Container.Resolve<IStorage>(parameters));
+                    await closureSafeModule.BeginJobModule(DependenciesController.Instance.Container.Resolve<IStorageClient>(parameters));
                     closureSafeModule.Dispose();
                 });
                 task.Wait();

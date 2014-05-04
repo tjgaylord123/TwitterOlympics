@@ -31,7 +31,7 @@ namespace MovieAnalyzer.Console.Discovery
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<AWSStorageClient>().As<IStorage>().InstancePerLifetimeScope().ExternallyOwned();
+            builder.RegisterType<AWSStorageClientClient>().As<IStorageClient>().InstancePerLifetimeScope().ExternallyOwned();
 
             // Discover our modules and register them here
 

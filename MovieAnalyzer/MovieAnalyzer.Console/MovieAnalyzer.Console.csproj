@@ -59,6 +59,10 @@
       <Project>{ab7262a5-9722-42a2-903d-3ce4112a8837}</Project>
       <Name>MovieAnalyzer.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MovieAnalyzer.Modules.RottenTomatoes\MovieAnalyzer.Modules.RottenTomatoes.csproj">
+      <Project>{ff7ef8d7-fead-4289-aab3-d87d3d7de219}</Project>
+      <Name>MovieAnalyzer.Modules.RottenTomatoes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MovieAnalyzer.Storage\MovieAnalyzer.Storage.csproj">
       <Project>{4b60ef6e-7488-4285-832f-7335d0cf5899}</Project>
       <Name>MovieAnalyzer.Storage</Name>
