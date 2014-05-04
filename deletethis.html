@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>connect to aws</title>
+        <script src="jquery.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc.14.min.js"></script>
+    <script src='Chart.min.js'></script>
+
+    </head>
+
+
+<body>
+<canvas id="Genre" width="600" height="400"></canvas>
+</body>
+
+<script type="text/javascript">
+  // See the Configuring section to configure credentials in the SDK
+        AWS.config.accessKeyId = 'AKIAJNZBFEQORVJAIXNA';
+        AWS.config.secretAccessKey = 'uZiqn0kZEAmjMxiFOcaby4G2a+IgO1VKJTOxw92U';
+
+      // Configure your region
+      AWS.config.region = 'us-west-2';
+
+</script>
+
+
+
+
+ <script type="text/javascript">
+ var bucket = new AWS.S3({params: {Bucket: 'blackjack-movieminer'}});
+
+ var params = {
+  Bucket: 'blackjack-movieminer', // required
+  Key: 'AnalysisOutput/thousands_list.json' ,// required
+
+};
+var response = 1;
+response =bucket.getObject(params, function(err, data) {
+  if (err) {
+  console.log(err, err.stack); 
+   document.getElementById('status').innerHTML =
+       'Could not load objects from S3';
+  }// an error occurred
+  else{
+      // successful response
+
+       //document.getElementById('status').innerHTML =
+       //data.Body.toString();
+       obj = jQuery.parseJSON(data.Body.toString());
+       console.log(obj);
+       //display_title = obj.results[0].display_title;
+var thirtiesY=0;
+var thirtiesN=0;
+for (var i =1930;i<1940;i++){
+  thirtiesY += obj[i].Yes.Count;
+}
+console.log(thirtiesY);
+    
+  var GenreData = {
+  labels : ["Comedy","Action & Adventure","Drama","Kids & Family","Romance","Horror","Mystery & Suspense",
+  "Science Fiction & Fantasy","Animation","Classics","Art House & International","Documentary","Television",
+  "Special Interest","Western","Musical & Performing Arts","Sports & Fitness","Cult Movies"],
+  datasets : [
+  {
+            fillColor : "rgba(220,220,220,0.5)",
+            strokeColor : "rgba(220,220,220,1)",
+            data : [
+            obj['Comedy'],
+            obj['Action & Adventure'],
+            obj["Drama"],
+            obj["Kids & Family"],
+            obj["Romance"],
+            obj["Horror"],
+            obj["Mystery & Suspense"],
+  obj["Science Fiction & Fantasy"],
+  obj["Animation"],obj["Classics"],
+  obj["Art House & International"],
+  obj["Documentary","Television"],
+  obj["Special Interest"],
+  obj["Western"],
+  obj["Musical & Performing Arts"],
+  obj["Sports & Fitness"],
+  obj["Cult Movies"]
+  ]
+    }
+  ]
+}
+
+    var Genre = document.getElementById('Genre').getContext('2d');
+    new Chart(Genre).Line(GenreData);
+
+
+
+  }
+});
+
+
+  // bucket.listObjects(function (err, data) {
+  //   if (err) {
+  //     document.getElementById('status').innerHTML =
+  //       'Could not load objects from S3';
+  //   } else {
+  //     document.getElementById('status').innerHTML =
+  //       'Loaded ' + data.Contents.length + ' items from S3';
+  //     for (var i = 0; i < data.Contents.length; i++) {
+  //       document.getElementById('objects').innerHTML +=
+  //         '<li>' + data.Contents[i].Key + '</li>';
+  //     }
+  //   }
+  // });
+// </script>
+
+</html>
