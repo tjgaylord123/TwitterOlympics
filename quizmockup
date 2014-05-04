@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<head>
+<title>Quiz</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<form name="input" action="html_form_action.asp" method="get">
+
+1. Question 1<br>
+	<input type="radio"  name="question1" value="a">a<br>   
+	<input type="radio"  name="question1" value="b">b<br>
+	<input type="radio"  name="question1" value="c">c<br>		<!-- correct -->
+	<input type="radio"  name="question1" value="d">d<br><br><br>
+
+2. Question 2<br>
+	<input type="radio"  name="question2" value="a">a<br>   
+	<input type="radio"  name="question2" value="b">b<br> <!-- correct -->
+    <input type="radio"  name="question2" value="c">c<br>
+    <input type="radio"  name="question2" value="d">d<br><br><br>
+
+3. Question 3<br>
+	<input type="radio"  name="question3" value="a">a<br>   
+	<input type="radio"  name="question3" value="b">b<br>	<!-- correct -->
+	<input type="radio"  name="question3" value="c">c<br>		
+	<input type="radio"  name="question3" value="d">d<br><br><br>
+    
+4. Question 4<br>
+	<input type="radio"  name="question4" value="a">a<br>   <!-- correct -->
+	<input type="radio"  name="question4" value="b">b<br>
+    <input type="radio"  name="question4" value="c">c<br>		
+	<input type="radio"  name="question4" value="d">d<br><br><br> 
+
+5. Question 5<br>
+	<input type="radio"  name="question5" value="a">a<br>   
+	<input type="radio"  name="question5" value="b">b<br>	
+	<input type="radio"  name="question5" value="c">c<br>		
+	<input type="radio"  name="question5" value="d">d<br><br><br>	<!-- correct -->
+
+
+<script>
+
+function checkTest() {
+var count = 0; 
+	
+	if
+($('input[type="radio"][name=question1]:checked').val() == "c") {
+        count++;
+    }
+	if
+($('input[type="radio"][name=question2]:checked').val() == "b") {
+        count++;
+    }
+	if
+($('input[type="radio"][name=question3]:checked').val() == "b") {
+        count++;
+    }
+	if
+($('input[type="radio"][name=question4]:checked').val() == "a") {
+        count++;
+    }
+	if
+($('input[type="radio"][name=question5]:checked').val() == "d") {
+        count++;
+    }
+    if (count > 3) {
+        alert("Your score for this quiz is " + count + ". ");
+		window.location = 'http://redwood.colorado.edu/syne7651/dm2/earth.html';
+    } else {
+        alert("Your score for this quiz is " + count + ". ");
+		window.location = 'http://redwood.colorado.edu/syne7651/dm2/quiz.html';
+    }
+}
+
+</script>
+
+<button type="button" onClick="checkTest()">Submit</button>
+</form>
+</html>
