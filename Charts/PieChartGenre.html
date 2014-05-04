@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Pie Chart Genre</title>
+        <script src='Chart.min.js'></script>
+    </head>
+    <body>
+    	<canvas id="Genre" width="600" height="400"></canvas>
+
+    	<script>
+var GenreData = [
+    {
+        value: 30,
+        color:"#F38630"
+    },
+    {
+        value : 50,
+        color : "#E0E4CC"
+    },
+    {
+        value : 100,
+        color : "#69D2E7"
+    }           
+]
+
+    var Genre = document.getElementById('Genre').getContext('2d');
+    new Chart(Genre).Pie(GenreData);
+
+		</script>
+    </body>
+</html>
