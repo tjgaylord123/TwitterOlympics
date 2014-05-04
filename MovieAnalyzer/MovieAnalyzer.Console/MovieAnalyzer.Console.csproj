@@ -59,6 +59,10 @@
       <Project>{ab7262a5-9722-42a2-903d-3ce4112a8837}</Project>
       <Name>MovieAnalyzer.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MovieAnalyzer.Modules.NewYorkTimes\MovieAnalyzer.Modules.NewYorkTimes.csproj">
+      <Project>{2ac1c509-61ee-4a66-b097-859ecfe66a2f}</Project>
+      <Name>MovieAnalyzer.Modules.NewYorkTimes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MovieAnalyzer.Modules.RottenTomatoes\MovieAnalyzer.Modules.RottenTomatoes.csproj">
       <Project>{ff7ef8d7-fead-4289-aab3-d87d3d7de219}</Project>
       <Name>MovieAnalyzer.Modules.RottenTomatoes</Name>

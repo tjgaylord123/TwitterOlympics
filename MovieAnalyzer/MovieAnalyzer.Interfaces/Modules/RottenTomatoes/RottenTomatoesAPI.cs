@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MovieAnalyzer.Interfaces.Modules
+namespace MovieAnalyzer.Interfaces.Modules.RottenTomatoes
 {
     public class Movie
     {

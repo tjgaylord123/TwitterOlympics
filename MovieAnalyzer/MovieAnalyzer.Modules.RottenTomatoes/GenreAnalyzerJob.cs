@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Threading.Tasks;
 using MovieAnalyzer.Interfaces.Modules;
+using MovieAnalyzer.Interfaces.Modules.RottenTomatoes;
 using MovieAnalyzer.Interfaces.Storage;
 using MovieMiner.Interfaces.Storage;
 using Newtonsoft.Json;
@@ -22,30 +23,34 @@ namespace MovieAnalyzer.Modules.RottenTomatoes
             _genreCountDictionary = new Dictionary<string, int>();
 
             // Get every file name in the main directory
+            object lockObject = new object();
             string[] allFileNames = _storageClient.GetAllFileNames();
-            foreach (string fileName in allFileNames)
+            Parallel.ForEach(allFileNames, async fileName =>
             {
                 string text = (await _storageClient.GetFileContents(fileName, FileType.Json)).Trim();
-                if (String.IsNullOrEmpty(text)) continue;
+                if (String.IsNullOrEmpty(text)) return;
 
                 Movie movie = null;
                 try
                 {
                     movie = JsonConvert.DeserializeObject<Movie>(text);
                 }
-                catch {}// Just continue for now
+                catch { }// Just continue for now
 
-                if (movie == null || movie.genres == null || movie.genres.Count == 0) continue;
+                if (movie == null || movie.genres == null || movie.genres.Count == 0) return;
 
-                movie.genres.ForEach(genre =>
+                lock (lockObject)
                 {
-                    if (!_genreCountDictionary.ContainsKey(genre))
+                    movie.genres.ForEach(genre =>
                     {
-                        _genreCountDictionary.Add(genre, 0);
-                    }
-                    _genreCountDictionary[genre]++;
-                });
-            }
+                        if (!_genreCountDictionary.ContainsKey(genre))
+                        {
+                            _genreCountDictionary.Add(genre, 0);
+                        }
+                        _genreCountDictionary[genre]++;
+                    });
+                }
+            });
 
             JObject json = new JObject();
             foreach (var kv in _genreCountDictionary)

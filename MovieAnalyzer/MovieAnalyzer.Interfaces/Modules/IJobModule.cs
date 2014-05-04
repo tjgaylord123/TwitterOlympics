@@ -7,7 +7,7 @@ namespace MovieAnalyzer.Interfaces.Modules
     public interface IJobModule : IDisposable
     {
 
-        Task BeginJobModule(IStorageClient storageClientClient);
+        Task BeginJobModule(IStorageClient storageClient);
 
         string ModuleName { get; }
 

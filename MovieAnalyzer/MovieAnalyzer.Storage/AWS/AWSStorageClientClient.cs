@@ -24,7 +24,7 @@ namespace MovieAnalyzer.Storage.AWS
             rootDirectory.Create();
 
             _mainDirectory = rootDirectory.CreateSubdirectory(directory);
-            _outputDirectory = _mainDirectory.CreateSubdirectory("Output");
+            _outputDirectory = rootDirectory.CreateSubdirectory("AnalysisOutput");
         }
 
         public string[] GetAllFileNames()
