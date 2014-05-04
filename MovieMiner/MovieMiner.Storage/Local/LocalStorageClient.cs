@@ -41,25 +41,25 @@ namespace MovieMiner.Storage.Local
             }
         }
 
-        public async Task<bool> WriteFileToStorageAsync(string fileContent, DateTime folderDate, FileType fileType)
+        public async Task<bool> WriteFileToStorageAsync(string fileContent, DateTime dateFileName, FileType fileType)
         {
             try
             {
                 // First create a folder if necessary
-                string directoryPath = string.Format("{0}\\{1}", _absoluteFolder, folderDate.ToString("yyyy MMMM dd"));
+                string directoryPath = string.Format("{0}\\{1}", _absoluteFolder, dateFileName.ToString("yyyy MMMM dd"));
                 if (!Directory.Exists(directoryPath))
                 {
                     Directory.CreateDirectory(directoryPath);
                 }
 
                 // Get the next filename and increment
-                if (!_folderNamesCache.ContainsKey(folderDate.Date))
+                if (!_folderNamesCache.ContainsKey(dateFileName.Date))
                 {
-                    _folderNamesCache.Add(folderDate.Date, 1);
+                    _folderNamesCache.Add(dateFileName.Date, 1);
                 }
 
-                string fileName = string.Format("{0}.{1}", _folderNamesCache[folderDate.Date], GetFileTypeExtension(fileType));
-                _folderNamesCache[folderDate.Date]++;
+                string fileName = string.Format("{0}.{1}", _folderNamesCache[dateFileName.Date], GetFileTypeExtension(fileType));
+                _folderNamesCache[dateFileName.Date]++;
 
                 // Write the file
                 byte[] encodedText = Encoding.Unicode.GetBytes(fileContent);
@@ -76,6 +76,12 @@ namespace MovieMiner.Storage.Local
             return true;
         }
 
+        public Task<bool> WriteFileToStorageAsync(string fileContent, string genericFileName, FileType fileType)
+        {
+            // This storage client does not need to use this
+            throw new NotImplementedException();
+        }
+
         public DateTime GetLatestDateFolderInStorage()
         {
             string[] movieDataDirectories = Directory.EnumerateDirectories(_absoluteFolder).ToArray();
@@ -87,7 +93,7 @@ namespace MovieMiner.Storage.Local
                     .Max();
         }
 
-        private string GetFileTypeExtension(FileType fileType)
+        private static string GetFileTypeExtension(FileType fileType)
         {
             switch (fileType)
             {
@@ -102,7 +108,13 @@ namespace MovieMiner.Storage.Local
 
         public void Dispose()
         {
-            // Do nothing for local storage
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            
         }
     }
 }

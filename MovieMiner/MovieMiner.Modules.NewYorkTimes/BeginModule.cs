@@ -56,7 +56,7 @@ namespace MovieMiner.Modules.NewYorkTimes
             GC.SuppressFinalize(this);
         }
 
-        protected void Dispose(bool disposing)
+        protected virtual void Dispose(bool disposing)
         {
             if (!disposing) return;
             if (_apiClient != null)

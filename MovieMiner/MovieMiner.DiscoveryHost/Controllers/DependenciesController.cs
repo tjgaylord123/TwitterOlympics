@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using MovieMiner.Interfaces.Storage;
+using MovieMiner.Storage.AWS;
 using MovieMiner.Storage.Local;
 
 namespace MovieMiner.DiscoveryHost.Controllers
