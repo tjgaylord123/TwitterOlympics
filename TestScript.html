@@ -4,11 +4,12 @@
         <title>connect to aws</title>
         <script src="jquery.min.js"></script>
 		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc.14.min.js"></script>
+		<script src='Chart.min.js'></script>
     </head>
 
 
 <body>
-<h1>lalala</h1>
+<h1>:)</h1>
 
 <script type="text/javascript">
   // See the Configuring section to configure credentials in the SDK
@@ -22,6 +23,7 @@
 
 <div id="status"></div>
 <ul id="objects"></ul>
+<canvas id="Genre" width="600" height="400"></canvas>
 
 
  <script type="text/javascript">
@@ -29,7 +31,7 @@
 
  var params = {
   Bucket: 'blackjack-movieminer', // required
-  Key: 'Test.txt' ,// required
+  Key: 'RottenTomatoes/Output/genre_analysis.json' ,// required
   // IfMatch: 'STRING_VALUE',
   // IfModifiedSince: new Date || 'Wed Dec 31 1969 16:00:00 GMT-0800 (PST)' || 123456789,
   // IfNoneMatch: 'STRING_VALUE',
@@ -43,17 +45,102 @@
   // ResponseExpires: new Date || 'Wed Dec 31 1969 16:00:00 GMT-0800 (PST)' || 123456789,
   // VersionId: 'STRING_VALUE',
 };
-var response = bucket.getObject(params, function(err, data) {
+var response = 1;
+response =bucket.getObject(params, function(err, data) {
   if (err) {
   console.log(err, err.stack); 
    document.getElementById('status').innerHTML =
        'Could not load objects from S3';
   }// an error occurred
   else{
+      // successful response
 
-      console.log(data.Body.toString());   
-         document.getElementById('status').innerHTML =
-       'in else';        // successful response
+       //document.getElementById('status').innerHTML =
+       //data.Body.toString();
+       obj = jQuery.parseJSON(data.Body.toString());
+       console.log(obj);
+       //display_title = obj.results[0].display_title;
+
+    
+	var GenreData = [
+    {
+        value: obj.Comedy,
+        color:"#F38630"
+    },
+    {
+        value : obj.Drama,
+        color : "#E0E4CC"
+    },
+    {
+        value : obj.Romance,
+        color : "#69D2E7"
+    },
+    {
+    	value : obj.Horror,
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj.Animation,
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Action & Adventure'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Kids & Family'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Mystery & Suspense'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Science Fiction & Fantasy'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Classics'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Art House & International'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Documentary'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Television'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Special Interest'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Western'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Musical & Performing Arts'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Sports & Fitness'],
+    	color : "#69D2E7"
+    },
+    {
+    	value : obj['Cult Movies'],
+    	color : "#69D2E7"
+    }
+]
+
+    var Genre = document.getElementById('Genre').getContext('2d');
+    new Chart(Genre).Pie(GenreData);
+
+
 
   }
 });
