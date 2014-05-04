@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using MovieMiner.Interfaces.Modules;
 using MovieMiner.Interfaces.Storage;
+using Newtonsoft.Json;
 
 namespace MovieMiner.Modules.RottenTomatoes
 {
@@ -30,13 +31,43 @@ namespace MovieMiner.Modules.RottenTomatoes
             char letter = 'A';
             while (letter <= 'Z')
             {
-                var response =
+                var queryResponse =
                     await _apiClient.GetAsync(
                         string.Format("api/public/v1.0/movies.json?apikey={0}&q={1}", APIKey, letter));
-                if (response.IsSuccessStatusCode)
+                if (queryResponse.IsSuccessStatusCode)
                 {
-                    string jsonBody = await response.Content.ReadAsStringAsync();
-                    await storageClient.WriteFileToStorageAsync(jsonBody, Convert.ToString(letter), FileType.Json);
+                    // Get a JObject so we can query against specific movies returned
+
+                    RTQuery rtQuery = null;
+                    try
+                    {
+                        string text = (await queryResponse.Content.ReadAsStringAsync()).Trim();
+                        rtQuery = JsonConvert.DeserializeObject<RTQuery>(text);
+                    }
+                    catch { } // Do nothing for now
+
+                    if (rtQuery != null && rtQuery.Movies != null && rtQuery.Movies.Count > 0)
+                    {
+                        Parallel.ForEach(rtQuery.Movies, movie =>
+                        {
+                            Movie closureSafeMovie = movie;
+                            var task = Task.Run(async () =>
+                            {
+                                HttpResponseMessage movieResponse =
+                                    await _apiClient.GetAsync(
+                                        string.Format("api/public/v1.0/{0}.json?apikey={1}", closureSafeMovie.id, APIKey));
+                                if (movieResponse.IsSuccessStatusCode)
+                                {
+                                    await
+                                        _storageClient.WriteFileToStorageAsync(
+                                            await movieResponse.Content.ReadAsStringAsync(), closureSafeMovie.title,
+                                            FileType.Json);
+                                }
+                            });
+                            task.Wait();
+                        });
+                    }
+      
                 }
                 letter++;
             }

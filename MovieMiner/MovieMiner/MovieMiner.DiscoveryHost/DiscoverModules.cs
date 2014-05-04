@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.IO;
@@ -23,10 +24,16 @@ namespace MovieMiner.DiscoveryHost
             var catalog = new AggregateCatalog();
             //Adds all the parts found in all assemblies in 
             //the same directory as the executing program
-            catalog.Catalogs.Add(
-             new DirectoryCatalog(
-              Path.GetDirectoryName(
-               Assembly.GetExecutingAssembly().Location)));
+            string assemblyName =
+                Path.GetDirectoryName(
+                    Assembly.GetExecutingAssembly().Location);
+
+            if (String.IsNullOrEmpty(assemblyName))
+            {
+                throw new ApplicationException("Could not reflect over running assembly.");
+            }
+
+            catalog.Catalogs.Add(new DirectoryCatalog(assemblyName));
 
             //Create the CompositionContainer with the parts in the catalog
             CompositionContainer container = new CompositionContainer(catalog);
@@ -40,11 +47,12 @@ namespace MovieMiner.DiscoveryHost
             Parallel.ForEach(_modules, module =>
             {
                 IDataModule closureSafeModule = module;
-                var task = Task.Run(async () =>
+                var task = Task.Run(() =>
                 {
                     var parameters = new Parameter[] { new NamedParameter("specificFolder", closureSafeModule.ModuleName) };
-                    await closureSafeModule.StartModule(
-                            DependenciesController.Instance.Container.Resolve<IStorageClient>(parameters));
+                    var innerTask = closureSafeModule.StartModule(
+                        DependenciesController.Instance.Container.Resolve<IStorageClient>(parameters));
+                    innerTask.Wait();
                     closureSafeModule.Dispose();
                 });
                 task.Wait();

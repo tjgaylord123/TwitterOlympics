@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="API\IAPIClient.cs" />
     <Compile Include="Modules\IDataModule.cs" />
+    <Compile Include="Modules\RottenTomatoesAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Storage\FileType.cs" />
     <Compile Include="Storage\IStorageClient.cs" />
