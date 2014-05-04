@@ -1,0 +1,58 @@
+
+
+{
+  "status":"OK",
+  "copyright":"Copyright (c) 2008 The New York Times Company.  All Rights Reserved.",
+  "num_results":8,
+  "results":[
+     {
+        "nyt_movie_id":135855,
+        "display_title":"Big Night",
+        "sort_name":"Big Night",
+        "mpaa_rating":"R",
+        "critics_pick":"Y",
+        "thousand_best":"Y",
+        "byline":"Janet Maslin",
+        "headline":"",
+        "capsule_review":"Restaurateur brothers stake all on one dinner. Succulent comedy.",
+        "summary_short":"",
+        "publication_date":"1996-03-29",
+        "opening_date":"1996-09-20",
+        "dvd_release_date":"1998-04-07",
+        "date_updated":"2008-11-04 03:54:15",
+        "seo-name":"Big-Night",
+        "link":{
+           "type":"article",
+           "url":"http:\/\/movies.nytimes.com\/movie\/review?res=9501E6DA1539F93AA15750C0A960958260",
+           "suggested_link_text":"Read the New York Times Review of Big Night"
+        },
+        "related_urls":[
+           {
+              "type":"overview",
+              "url":"http:\/\/movies.nytimes.com\/movie\/135855\/Big-Night\/overview",
+              "suggested_link_text":"Overview of Big Night"
+           },
+           {
+              "type":"showtimes",
+              "url":"http:\/\/movies.nytimes.com\/movie\/135855\/Big-Night\/showtimes",
+              "suggested_link_text":"Tickets & Showtimes for Big Night"
+           },
+           {
+              "type":"awards",
+              "url":"http:\/\/movies.nytimes.com\/movie\/135855\/Big-Night\/details",
+              "suggested_link_text":"Cast, Credits & Awards for Big Night"
+           },
+           {
+              "type":"community",
+              "url":"http:\/\/movies.nytimes.com\/movie\/135855\/Big-Night\/rnr",
+              "suggested_link_text":"Readers' Reviews of Big Night"
+           },
+           {
+              "type":"trailers",
+              "url":"http:\/\/movies.nytimes.com\/movie\/135855\/Big-Night\/trailers",
+              "suggested_link_text":"Trailers & Clips for Big Night"
+           }
+        ]
+     }
+  ]
+}
