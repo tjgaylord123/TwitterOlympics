@@ -37,8 +37,7 @@ namespace MovieMiner.DiscoveryHost
 
         public void Start()
         {
-
-            foreach (var module in _modules)
+            Parallel.ForEach(_modules, module =>
             {
                 IDataModule closureSafeModule = module;
                 var task = Task.Run(async () =>
@@ -49,7 +48,7 @@ namespace MovieMiner.DiscoveryHost
                     closureSafeModule.Dispose();
                 });
                 task.Wait();
-            }
+            });
         }
     }
 }
