@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="1fcdaafd-f2b8-4643-ad18-fe1c3e3916c8" name="ArchitectureDiagram" linkedPackageId="42e2761d-10a5-4e5b-a17f-69f159bdd7b8" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="90a5031d-77af-45e4-97b0-953e5654bf63">
+      <profileInstance Id="e5569772-2e03-4d03-9a8b-831533800f95" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="12cbe14c-6521-4e2f-bd0b-15bd21e1e6c9">
+      <profileInstance Id="e176e29e-1c8f-43c4-b48b-c36264739f62" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="b4abc125-7b22-4538-ab9c-2ec0ba22595c" name="MovieMiner" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="120beddc-ce13-479e-9377-fc8f3fd77e49" />
+        <ownedAttributesInternal>
+          <part Id="7a76926a-93ef-4215-ba1e-b8faf26f48dd" name="Console" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="435d8991-5575-496e-bd79-8c66b6765108" />
+            <targetNamedElementsInternal>
+              <connector Id="fb6630e9-ccdb-428c-a25c-699229d7d550" isLeaf="false" isStatic="false">
+                <partMoniker Id="5b6fe3ef-4b93-4c1c-8447-e6dada2bcb0d" LastKnownName="RT MR Jobs" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="ca3b3db5-e152-4f71-8b86-752514be46c0">
+                      <elementDefinition Id="751be26d-52f9-4866-b51c-58389a220f80" />
+                      <portWithPart>
+                        <requiredInterfaceMoniker Id="b84fafeb-6adc-4668-b983-3c2ee475019e" LastKnownName="Port1" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="6821b873-b9ce-497c-a4e0-7cbc9fd3c82b">
+                      <elementDefinition Id="8205335a-e999-4222-8a29-72ca46f616b7" />
+                      <portWithPart>
+                        <providedInterfaceMoniker Id="9e83fdee-3de5-49ad-9172-05de698c5764" LastKnownName="Port1" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+                <elementDefinition Id="618f53a2-bd94-41f8-8e84-8e2a9998e67b" />
+              </connector>
+              <connector Id="de9868f2-7ccc-441c-aeaa-149014b1e7f3" isLeaf="false" isStatic="false">
+                <partMoniker Id="5436ea82-9197-41aa-a478-6705a3d25635" LastKnownName="NYT MR Jobs" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="28b8b1c7-5016-446c-a304-1eab522cd99f">
+                      <elementDefinition Id="a3d892c2-5725-40cf-ba5c-b179d9be432b" />
+                      <portWithPart>
+                        <requiredInterfaceMoniker Id="b84fafeb-6adc-4668-b983-3c2ee475019e" LastKnownName="Port1" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="550243d4-6a77-435f-957c-dd238a0598d9">
+                      <elementDefinition Id="c40d69b5-5315-44ee-b093-07bd3461af40" />
+                      <portWithPart>
+                        <providedInterfaceMoniker Id="c3f4b869-ab64-4a1d-a840-fe7e41273e3b" LastKnownName="Port1" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+                <elementDefinition Id="0eb3f954-4b79-4bdb-b84a-0bdedb1bf694" />
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <componentMoniker Id="ead03b8f-d275-45e3-91e4-8e46f716a400" />
+            </type_NamedElement>
+          </part>
+          <part Id="5436ea82-9197-41aa-a478-6705a3d25635" name="NYT MR Jobs" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="7d1b431f-7a4d-4100-8c3f-8ad159b25cf2" />
+            <targetNamedElementsInternal>
+              <connector Id="947fe6a2-30aa-4f10-8ab8-bf96468ee4df" isLeaf="false" isStatic="false">
+                <partMoniker Id="b8164761-3beb-4482-a81e-cc85be1e973c" LastKnownName="AWSStorage" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="45b584ae-ee14-4140-bba1-0dde72a07b14">
+                      <elementDefinition Id="8dc79116-0ff7-4c29-a386-046cf8026166" />
+                      <portWithPart>
+                        <requiredInterfaceMoniker Id="da909808-b4bb-4768-ba6f-445a7a5554a6" LastKnownName="Port2" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="fab8cd07-8e9d-48c0-936c-7e1ea13ec8b3">
+                      <elementDefinition Id="dd725269-ace7-43ec-bbfc-565c948417ef" />
+                      <portWithPart>
+                        <providedInterfaceMoniker Id="0f0106e6-d32b-40f4-9da3-687758a28eff" LastKnownName="Port1" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+                <elementDefinition Id="7562cbb5-289c-4b62-870d-bbf6e9186cb6" />
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <componentMoniker Id="7aaaad32-8140-41cc-9a47-d397dc333fb3" />
+            </type_NamedElement>
+          </part>
+          <part Id="5b6fe3ef-4b93-4c1c-8447-e6dada2bcb0d" name="RT MR Jobs" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="f5f01ab0-379e-4b29-b194-d43faa7de843" />
+            <targetNamedElementsInternal>
+              <connector Id="37b76710-dafb-48fd-8aa1-6b0d964b95ad" isLeaf="false" isStatic="false">
+                <partMoniker Id="b8164761-3beb-4482-a81e-cc85be1e973c" LastKnownName="AWSStorage" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="039e69cd-345c-4a62-be9c-4fe335c32e5d">
+                      <elementDefinition Id="6901b4c9-d503-4505-9d61-571bbecb7643" />
+                      <portWithPart>
+                        <requiredInterfaceMoniker Id="e512d672-2dd6-4696-9e5f-e1356a9e1488" LastKnownName="Port2" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd Id="ba331947-9bc6-4c5a-aaa3-dbf7ed43dfc7">
+                      <elementDefinition Id="77febc1a-5656-470b-96cf-f2845886bb3d" />
+                      <portWithPart>
+                        <providedInterfaceMoniker Id="0f0106e6-d32b-40f4-9da3-687758a28eff" LastKnownName="Port1" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+                <elementDefinition Id="46515ba5-52c3-4680-a7a5-688483101e0b" />
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <componentMoniker Id="cc55be69-c712-410c-8951-ea5009554d79" />
+            </type_NamedElement>
+          </part>
+          <part Id="b8164761-3beb-4482-a81e-cc85be1e973c" name="AWSStorage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="28a75003-945b-4b26-a233-db3af16faeac" />
+            <type_NamedElement>
+              <componentMoniker Id="8cc89e9d-2471-44cd-95e8-e5de516cbfb4" />
+            </type_NamedElement>
+          </part>
+          <requiredInterface Id="4f741cf2-2ba0-47cf-af7a-34ff9812b977" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="83b22b55-c880-4656-8417-385387d00eab" />
+            <suppliersInternal>
+              <dependency Id="eef90c10-8d7b-4d6a-9305-1e111413ed2f">
+                <providedInterfaceMoniker Id="a272f8f4-8f6c-48cf-8548-c3c95d028fdd" LastKnownName="Port1" />
+                <elementDefinition Id="9b1e1aa2-f1cb-4d1c-81e5-4cfa6baaa1a5" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="545d9d38-1c77-4ab1-b113-57f8ffbd16d3" LastKnownName="AWS .NET" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="ead03b8f-d275-45e3-91e4-8e46f716a400" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="13049387-3e2d-4142-a86b-51a6cb78ebc7" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="b84fafeb-6adc-4668-b983-3c2ee475019e" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="8f6a0420-2e11-4017-874f-b30933e9ab43" />
+            <type_NamedElement>
+              <interfaceMoniker Id="60c64073-c08b-41e7-90ab-10bb1939bbbe" LastKnownName="IJobModule" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="60c64073-c08b-41e7-90ab-10bb1939bbbe" name="IJobModule" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f7a0cfd5-43b4-43b8-8895-b6e23f26e686" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="7aaaad32-8140-41cc-9a47-d397dc333fb3" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="de6500f6-9472-4b0d-b1ae-aeb99d128787" />
+        <ownedAttributesInternal>
+          <providedInterface Id="c3f4b869-ab64-4a1d-a840-fe7e41273e3b" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="0efae7f2-80a2-441e-8359-b9493339bcac" />
+            <type_NamedElement>
+              <interfaceMoniker Id="138a9ed1-5a73-4f2b-bffc-82fcb687f4f8" LastKnownName="IJobModule" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface Id="da909808-b4bb-4768-ba6f-445a7a5554a6" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="280010a5-d99d-4274-ac15-c5bb549fcebf" />
+            <type_NamedElement>
+              <interfaceMoniker Id="bd8c6a9b-8ac4-49f3-aed2-10180fb973d8" LastKnownName="IStorageClient" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="138a9ed1-5a73-4f2b-bffc-82fcb687f4f8" name="IJobModule" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ad49302d-489b-446e-8630-0f754bf12091" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="bd8c6a9b-8ac4-49f3-aed2-10180fb973d8" name="IStorageClient" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6a204c2d-3bc9-49a1-addf-62a9f5c27f0d" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="cc55be69-c712-410c-8951-ea5009554d79" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e5bea066-58a1-4aa4-a224-93dd10087f57" />
+        <ownedAttributesInternal>
+          <providedInterface Id="9e83fdee-3de5-49ad-9172-05de698c5764" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="d6445b36-c9de-4bc2-8485-f57600134aca" />
+            <type_NamedElement>
+              <interfaceMoniker Id="180ddd64-27f7-4459-9c78-ee02b8c46437" LastKnownName="IJobModule" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface Id="e512d672-2dd6-4696-9e5f-e1356a9e1488" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="4e8e0e24-b85a-4ca3-830b-30f2994f7f13" />
+            <type_NamedElement>
+              <interfaceMoniker Id="5b8eed6c-ed27-4a8d-a817-7b785a966a6f" LastKnownName="IStorageClient" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="180ddd64-27f7-4459-9c78-ee02b8c46437" name="IJobModule" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e8f95c8b-8500-4f28-919e-318f8e7c38c1" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="5b8eed6c-ed27-4a8d-a817-7b785a966a6f" name="IStorageClient" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="df2f5cc3-7f88-44cf-a1a7-f03a9b8852d3" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="8cc89e9d-2471-44cd-95e8-e5de516cbfb4" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d5a93296-1b4e-4085-af28-528801b52a41" />
+        <ownedAttributesInternal>
+          <providedInterface Id="0f0106e6-d32b-40f4-9da3-687758a28eff" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="da1e7b82-59fd-4fce-8d30-44e0a14c9dbf" />
+            <type_NamedElement>
+              <interfaceMoniker Id="7baa1c19-0d3e-467e-92e4-44b3aadead16" LastKnownName="IStorageClient" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="7baa1c19-0d3e-467e-92e4-44b3aadead16" name="IStorageClient" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="33e8709c-c072-441e-9350-96ceb7c1d3a3" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="545d9d38-1c77-4ab1-b113-57f8ffbd16d3" name="AWS .NET" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="037b9383-e3ce-4a88-abfd-da5773573e43" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="183bb007-49d1-4ab8-8cc6-e272cd54e824" name="AWS S3" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="44b0dae3-3c0d-4d6d-8552-7fd186153f5e" />
+        <ownedAttributesInternal>
+          <providedInterface Id="2622bf43-ae05-45e7-80d7-757f55f7a3bb" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="4aeb3669-9486-45f4-831a-895c39339965" />
+            <type_NamedElement>
+              <interfaceMoniker Id="7811163a-585d-461a-bc51-28f8c0d35c21" LastKnownName="HTTP" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="7811163a-585d-461a-bc51-28f8c0d35c21" name="HTTP" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="28f6b67b-5737-4858-8930-09051559b4b0" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="15a87b00-db32-4c6f-8772-8684492b0625" name="AWS SDK for .NET" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b2722adc-1774-4361-b8e1-623ece83a1c8" />
+        <ownedAttributesInternal>
+          <providedInterface Id="a272f8f4-8f6c-48cf-8548-c3c95d028fdd" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="149b09aa-6056-407a-9352-69eefd90aa45" />
+            <type_NamedElement>
+              <interfaceMoniker Id="de4b0aa8-1061-4bd1-9901-365e5e103119" LastKnownName="AWS .NET" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface Id="1d01d055-4d6a-4605-b2d5-94f9635c90cf" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="26578a07-76cd-4fb7-9e89-891e68d57c2b" />
+            <suppliersInternal>
+              <dependency Id="31560f47-83cf-4b02-90d2-bed465b3b703">
+                <providedInterfaceMoniker Id="2622bf43-ae05-45e7-80d7-757f55f7a3bb" LastKnownName="Port1" />
+                <elementDefinition Id="8381bcd4-ef97-4b4f-acdb-52fcfb227c1f" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="a1f9e313-2fd1-415e-9959-d96bfee7f633" LastKnownName="HTTP" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="de4b0aa8-1061-4bd1-9901-365e5e103119" name="AWS .NET" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f1dc132b-bd41-4888-89ed-7b4f54cb2465" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="a1f9e313-2fd1-415e-9959-d96bfee7f633" name="HTTP" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e2149102-a75c-4d45-8280-f77edce77a50" />
+      </Interface>
+    </modelContainsNamedElements>
+  </packagedElements>
+  <package Id="42e2761d-10a5-4e5b-a17f-69f159bdd7b8" name="MovieAnalyzer.Architecture">
+    <elementDefinition Id="7deb45b2-6a3a-405d-81e0-9122449c7c6f" />
+  </package>
+</componentModel>

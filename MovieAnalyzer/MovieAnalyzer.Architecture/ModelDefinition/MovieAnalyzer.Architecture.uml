@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
+  dslVersion="1.0.0.0"
+  Id="7deb45b2-6a3a-405d-81e0-9122449c7c6f"
+  name="MovieAnalyzer.Architecture" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <component
+        Id="120beddc-ce13-479e-9377-fc8f3fd77e49"
+        name="MovieMiner"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <part
+            Id="435d8991-5575-496e-bd79-8c66b6765108"
+            name="Console"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <targetNamedElementsInternal>
+              <connector
+                Id="618f53a2-bd94-41f8-8e84-8e2a9998e67b"
+                isLeaf="false"
+                isStatic="false">
+                <partMoniker
+                  Id="f5f01ab0-379e-4b29-b194-d43faa7de843"
+                  LastKnownName="RT MR Jobs"
+                  LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd
+                      Id="751be26d-52f9-4866-b51c-58389a220f80">
+                      <portWithPart>
+                        <requiredInterfaceMoniker
+                          Id="8f6a0420-2e11-4017-874f-b30933e9ab43"
+                          LastKnownName="Port1"
+                          LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd
+                      Id="8205335a-e999-4222-8a29-72ca46f616b7">
+                      <portWithPart>
+                        <providedInterfaceMoniker
+                          Id="d6445b36-c9de-4bc2-8485-f57600134aca"
+                          LastKnownName="Port1"
+                          LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+              </connector>
+              <connector
+                Id="0eb3f954-4b79-4bdb-b84a-0bdedb1bf694"
+                isLeaf="false"
+                isStatic="false">
+                <partMoniker
+                  Id="7d1b431f-7a4d-4100-8c3f-8ad159b25cf2"
+                  LastKnownName="NYT MR Jobs"
+                  LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd
+                      Id="a3d892c2-5725-40cf-ba5c-b179d9be432b">
+                      <portWithPart>
+                        <requiredInterfaceMoniker
+                          Id="8f6a0420-2e11-4017-874f-b30933e9ab43"
+                          LastKnownName="Port1"
+                          LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd
+                      Id="c40d69b5-5315-44ee-b093-07bd3461af40">
+                      <portWithPart>
+                        <providedInterfaceMoniker
+                          Id="0efae7f2-80a2-441e-8359-b9493339bcac"
+                          LastKnownName="Port1"
+                          LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <componentMoniker
+                Id="13049387-3e2d-4142-a86b-51a6cb78ebc7"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="7d1b431f-7a4d-4100-8c3f-8ad159b25cf2"
+            name="NYT MR Jobs"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <targetNamedElementsInternal>
+              <connector
+                Id="7562cbb5-289c-4b62-870d-bbf6e9186cb6"
+                isLeaf="false"
+                isStatic="false">
+                <partMoniker
+                  Id="28a75003-945b-4b26-a233-db3af16faeac"
+                  LastKnownName="AWSStorage"
+                  LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd
+                      Id="8dc79116-0ff7-4c29-a386-046cf8026166">
+                      <portWithPart>
+                        <requiredInterfaceMoniker
+                          Id="280010a5-d99d-4274-ac15-c5bb549fcebf"
+                          LastKnownName="Port2"
+                          LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd
+                      Id="dd725269-ace7-43ec-bbfc-565c948417ef">
+                      <portWithPart>
+                        <providedInterfaceMoniker
+                          Id="da1e7b82-59fd-4fce-8d30-44e0a14c9dbf"
+                          LastKnownName="Port1"
+                          LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <componentMoniker
+                Id="de6500f6-9472-4b0d-b1ae-aeb99d128787"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="f5f01ab0-379e-4b29-b194-d43faa7de843"
+            name="RT MR Jobs"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <targetNamedElementsInternal>
+              <connector
+                Id="46515ba5-52c3-4680-a7a5-688483101e0b"
+                isLeaf="false"
+                isStatic="false">
+                <partMoniker
+                  Id="28a75003-945b-4b26-a233-db3af16faeac"
+                  LastKnownName="AWSStorage"
+                  LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                <relationshipOwnedElementsInternal>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd
+                      Id="6901b4c9-d503-4505-9d61-571bbecb7643">
+                      <portWithPart>
+                        <requiredInterfaceMoniker
+                          Id="4e8e0e24-b85a-4ca3-830b-30f2994f7f13"
+                          LastKnownName="Port2"
+                          LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                  <connectorHasConnectorEnds>
+                    <connectorEnd
+                      Id="77febc1a-5656-470b-96cf-f2845886bb3d">
+                      <portWithPart>
+                        <providedInterfaceMoniker
+                          Id="da1e7b82-59fd-4fce-8d30-44e0a14c9dbf"
+                          LastKnownName="Port1"
+                          LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+                      </portWithPart>
+                    </connectorEnd>
+                  </connectorHasConnectorEnds>
+                </relationshipOwnedElementsInternal>
+              </connector>
+            </targetNamedElementsInternal>
+            <type_NamedElement>
+              <componentMoniker
+                Id="e5bea066-58a1-4aa4-a224-93dd10087f57"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="28a75003-945b-4b26-a233-db3af16faeac"
+            name="AWSStorage"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="d5a93296-1b4e-4085-af28-528801b52a41"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </part>
+          <requiredInterface
+            Id="83b22b55-c880-4656-8417-385387d00eab"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <suppliersInternal>
+              <dependency
+                Id="9b1e1aa2-f1cb-4d1c-81e5-4cfa6baaa1a5">
+                <providedInterfaceMoniker
+                  Id="149b09aa-6056-407a-9352-69eefd90aa45"
+                  LastKnownName="Port1"
+                  LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="037b9383-e3ce-4a88-abfd-da5773573e43"
+                LastKnownName="AWS .NET"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="13049387-3e2d-4142-a86b-51a6cb78ebc7"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="8f6a0420-2e11-4017-874f-b30933e9ab43"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="f7a0cfd5-43b4-43b8-8895-b6e23f26e686"
+                LastKnownName="IJobModule"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f7a0cfd5-43b4-43b8-8895-b6e23f26e686"
+        name="IJobModule"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="de6500f6-9472-4b0d-b1ae-aeb99d128787"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="0efae7f2-80a2-441e-8359-b9493339bcac"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="ad49302d-489b-446e-8630-0f754bf12091"
+                LastKnownName="IJobModule"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface
+            Id="280010a5-d99d-4274-ac15-c5bb549fcebf"
+            name="Port2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="6a204c2d-3bc9-49a1-addf-62a9f5c27f0d"
+                LastKnownName="IStorageClient"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="ad49302d-489b-446e-8630-0f754bf12091"
+        name="IJobModule"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="6a204c2d-3bc9-49a1-addf-62a9f5c27f0d"
+        name="IStorageClient"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="e5bea066-58a1-4aa4-a224-93dd10087f57"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="d6445b36-c9de-4bc2-8485-f57600134aca"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="e8f95c8b-8500-4f28-919e-318f8e7c38c1"
+                LastKnownName="IJobModule"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface
+            Id="4e8e0e24-b85a-4ca3-830b-30f2994f7f13"
+            name="Port2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="df2f5cc3-7f88-44cf-a1a7-f03a9b8852d3"
+                LastKnownName="IStorageClient"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="e8f95c8b-8500-4f28-919e-318f8e7c38c1"
+        name="IJobModule"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="df2f5cc3-7f88-44cf-a1a7-f03a9b8852d3"
+        name="IStorageClient"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="d5a93296-1b4e-4085-af28-528801b52a41"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="da1e7b82-59fd-4fce-8d30-44e0a14c9dbf"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="33e8709c-c072-441e-9350-96ceb7c1d3a3"
+                LastKnownName="IStorageClient"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="33e8709c-c072-441e-9350-96ceb7c1d3a3"
+        name="IStorageClient"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="037b9383-e3ce-4a88-abfd-da5773573e43"
+        name="AWS .NET"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="44b0dae3-3c0d-4d6d-8552-7fd186153f5e"
+        name="AWS S3"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="4aeb3669-9486-45f4-831a-895c39339965"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="28f6b67b-5737-4858-8930-09051559b4b0"
+                LastKnownName="HTTP"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="28f6b67b-5737-4858-8930-09051559b4b0"
+        name="HTTP"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="b2722adc-1774-4361-b8e1-623ece83a1c8"
+        name="AWS SDK for .NET"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="149b09aa-6056-407a-9352-69eefd90aa45"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="f1dc132b-bd41-4888-89ed-7b4f54cb2465"
+                LastKnownName="AWS .NET"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface
+            Id="26578a07-76cd-4fb7-9e89-891e68d57c2b"
+            name="Port2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <suppliersInternal>
+              <dependency
+                Id="8381bcd4-ef97-4b4f-acdb-52fcfb227c1f">
+                <providedInterfaceMoniker
+                  Id="4aeb3669-9486-45f4-831a-895c39339965"
+                  LastKnownName="Port1"
+                  LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="e2149102-a75c-4d45-8280-f77edce77a50"
+                LastKnownName="HTTP"
+                LastKnownLocation="MovieAnalyzer.Architecture.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f1dc132b-bd41-4888-89ed-7b4f54cb2465"
+        name="AWS .NET"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="e2149102-a75c-4d45-8280-f77edce77a50"
+        name="HTTP"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
