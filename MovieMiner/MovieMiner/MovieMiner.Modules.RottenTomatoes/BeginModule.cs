@@ -28,54 +28,76 @@ namespace MovieMiner.Modules.RottenTomatoes
                 letterChar++;
             }
 
-            Parallel.ForEach(allLetters, letter =>
+            HttpClient httpClient = new HttpClient { BaseAddress = new Uri(BaseAddress) };
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            IStorageClient storageClient = (IStorageClient)Activator.CreateInstance(typeof(TStorage), new object[] { directory });
+
+            HttpClient closureSafeHttpClient = httpClient;
+            IStorageClient closureSafeStorageClient = storageClient;
+            Parallel.ForEach(allLetters, async letter =>
             {
-                HttpClient httpClient = new HttpClient { BaseAddress = new Uri(BaseAddress) };
-                httpClient.DefaultRequestHeaders.Accept.Clear();
-                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                var queryTask = httpClient.GetAsync(
-                        string.Format("api/public/v1.0/movies.json?apikey={0}&q={1}", APIKey, letter));
-                queryTask.Wait();
-                if (!queryTask.Result.IsSuccessStatusCode) return;
-
-                RTQuery rtQuery = null;
+                Task<HttpResponseMessage> queryResponse;
                 try
                 {
-                    var stringTask = queryTask.Result.Content.ReadAsStringAsync();
-                    stringTask.Wait();
-                    string text = (stringTask.Result).Trim();
-                    rtQuery = JsonConvert.DeserializeObject<RTQuery>(text);
+                    queryResponse = closureSafeHttpClient.GetAsync(
+                        string.Format("api/public/v1.0/movies.json?apikey={0}&q={1}", APIKey, letter));
+                    queryResponse.Wait();
                 }
                 catch
                 {
+                    return;
                 } // Do nothing for now
 
-                if (rtQuery != null && rtQuery.Movies != null && rtQuery.Movies.Count > 0)
-                {
-                    HttpClient innerHttpClient = new HttpClient { BaseAddress = new Uri(BaseAddress) };
-                    innerHttpClient.DefaultRequestHeaders.Accept.Clear();
-                    innerHttpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                if (!queryResponse.Result.IsSuccessStatusCode) return;
 
-                    IStorageClient storageClient = (IStorageClient)Activator.CreateInstance(typeof(TStorage), new object[] { directory });
-                    foreach(var movie in rtQuery.Movies)
-                    {
-                        var task = innerHttpClient.GetAsync(string.Format("api/public/v1.0/movies/{0}.json?apikey={1}", movie.id, APIKey));
-                        task.Wait();
-                        if (task.Result.IsSuccessStatusCode)
-                        {
-                            var thirdTask = task.Result.Content.ReadAsStringAsync();
-                            thirdTask.Wait();
-                            var innerTask = storageClient.WriteFileToStorageAsync(thirdTask.Result.Trim(), movie.title, FileType.Json);
-                            innerTask.Wait();
-                        }
-                    }
-                    innerHttpClient.Dispose();
-                    storageClient.Dispose();
+                RTQuery rtQuery;
+                try
+                {
+                    string content = await queryResponse.Result.Content.ReadAsStringAsync();
+                    rtQuery = JsonConvert.DeserializeObject<RTQuery>(content.Trim());
                 }
-                httpClient.Dispose();
+                catch
+                {
+                    return;
+                } // Do nothing for now
+
+                if (rtQuery == null || rtQuery.Movies == null || rtQuery.Movies.Count <= 0) return;
+
+                foreach(var movie in rtQuery.Movies)
+                {
+                    Task<HttpResponseMessage> innerQueryResponse;
+                    try
+                    {
+                        innerQueryResponse = closureSafeHttpClient.GetAsync(
+                            string.Format("api/public/v1.0/movies/{0}.json?apikey={1}", movie.id, APIKey));
+                        innerQueryResponse.Wait();
+                    }
+                    catch
+                    {
+                        return;
+                    }
+                    if (!innerQueryResponse.Result.IsSuccessStatusCode) continue;
+
+                    Task<string> innerContent = innerQueryResponse.Result.Content.ReadAsStringAsync();
+                    innerContent.Wait();
+
+                    try
+                    {
+                       Task<bool> writeTask = closureSafeStorageClient.WriteFileToStorageAsync(innerContent.Result.Trim(), movie.title,
+                            FileType.Json);
+                        writeTask.Wait();
+                    }
+                    catch
+                    {
+                        return;
+                    }
+                }
             });
 
+            httpClient.Dispose();
+            storageClient.Dispose();
         }
 
         public string ModuleName

@@ -11,7 +11,7 @@ namespace MovieMiner.Modules.NewYorkTimes
     [Export(typeof(IDataModule))]
     public class BeginModule : IDataModule
     {
-        private static readonly DateTime _minDate = new DateTime(1930, 1, 1);
+        private static readonly DateTime _minDate = new DateTime(2000, 1, 1);
         private const string BaseAddress =
             "http://api.nytimes.com",
             APIKey = "e20cce9eeea18167a0f5d780a706ba12:0:69143363",
@@ -29,32 +29,39 @@ namespace MovieMiner.Modules.NewYorkTimes
                 allDates[i] = allDates[i - 1].AddDays(1);
             }
 
-            Parallel.ForEach(allDates, async date =>
+            HttpClient httpClient = new HttpClient { BaseAddress = new Uri(BaseAddress) };
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            IStorageClient storageClient =
+                (IStorageClient)Activator.CreateInstance(typeof (TStorage), new object[] {directory});
+
+            HttpClient closureSafeHttpClient = httpClient;
+            IStorageClient cosureSafeStorageClient = storageClient;
+
+            Parallel.ForEach(allDates, date =>
             {
                 try
                 {
-                    HttpClient httpClient = new HttpClient {BaseAddress = new Uri(BaseAddress)};
-                    httpClient.DefaultRequestHeaders.Accept.Clear();
-                    httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    IStorageClient storageClient =
-                        (IStorageClient) Activator.CreateInstance(typeof (TStorage), new object[] {directory});
-                    var response =
-                        await httpClient.GetAsync(
+                    Task<HttpResponseMessage> queryResponse = closureSafeHttpClient.GetAsync(
                             string.Format("/svc/movies/v2/reviews/search.json?opening-date={0}-{1}-{2}&api-key={3}",
                                 date.Year,
                                 date.Month < 10 ? string.Format("0{0}", date.Month) : Convert.ToString(date.Month),
                                 date.Day < 10 ? string.Format("0{0}", date.Day) : Convert.ToString(date.Day), APIKey));
-                    if (!response.IsSuccessStatusCode) return;
+                    queryResponse.Wait();
+                    if (!queryResponse.Result.IsSuccessStatusCode) return;
 
-                    string jsonBody = await response.Content.ReadAsStringAsync();
-                    await storageClient.WriteFileToStorageAsync(jsonBody, date.Date, FileType.Json);
+                    Task<string> jsonBody = queryResponse.Result.Content.ReadAsStringAsync();
+                    jsonBody.Wait();
 
-                    httpClient.Dispose();
-                    storageClient.Dispose();
+                    Task<bool> writeTask = cosureSafeStorageClient.WriteFileToStorageAsync(jsonBody.Result, date.Date, FileType.Json);
+                    writeTask.Wait();
                 }
-                catch { }
+                catch { } // do nothing for now
             });
+
+            httpClient.Dispose();
+            storageClient.Dispose();
         }
 
         public string ModuleName
