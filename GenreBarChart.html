@@ -31,7 +31,7 @@
 
  var params = {
   Bucket: 'blackjack-movieminer', // required
-  Key: 'RottenTomatoes/Output/genre_analysis.json' ,// required
+  Key: 'AnalysisOutput/genre_analysis.json' ,// required
 
 };
 var response = 1;
@@ -68,8 +68,14 @@ response =bucket.getObject(params, function(err, data) {
             obj["Horror"],
             obj["Mystery & Suspense"],
 	obj["Science Fiction & Fantasy"],
-	obj["Animation"],obj["Classics"],obj["Art House & International"],obj["Documentary","Television"],
-	obj["Special Interest"],obj["Western"],obj["Musical & Performing Arts"],obj["Sports & Fitness"],obj["Cult Movies"]
+	obj["Animation"],obj["Classics"],
+  obj["Art House & International"],
+  obj["Documentary","Television"],
+	obj["Special Interest"],
+  obj["Western"],
+  obj["Musical & Performing Arts"],
+  obj["Sports & Fitness"],
+  obj["Cult Movies"]
 	]
     }
 	]
