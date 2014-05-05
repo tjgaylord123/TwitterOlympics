@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMiner.Storage", "Movie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMiner.Modules.NewYorkTimes", "MovieMiner.Modules.NewYorkTimes\MovieMiner.Modules.NewYorkTimes.csproj", "{EF966091-DA35-4951-8159-34CF398454EE}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "MovieMiner.Architecture", "MovieMiner.Architecture\MovieMiner.Architecture.modelproj", "{7F6432E5-DA41-4D30-A025-11F91154491A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,16 @@ Global
 		{EF966091-DA35-4951-8159-34CF398454EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EF966091-DA35-4951-8159-34CF398454EE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EF966091-DA35-4951-8159-34CF398454EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7F6432E5-DA41-4D30-A025-11F91154491A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
