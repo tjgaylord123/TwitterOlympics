@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>connect to aws</title>
+        <script src="jquery.min.js"></script>
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc.14.min.js"></script>
+		<script src='Chart.min.js'></script>
+
+    </head>
+
+
+<body>
+<canvas id="three" width="600" height="400"></canvas>
+<canvas id="four" width="600" height="400"></canvas>
+<canvas id="five" width="600" height="400"></canvas>
+<canvas id="six" width="600" height="400"></canvas>
+<canvas id="seven" width="600" height="400"></canvas>
+<canvas id="eight" width="600" height="400"></canvas>
+<canvas id="nine" width="600" height="400"></canvas>
+<canvas id="ten" width="600" height="400"></canvas>
+<canvas id="el" width="600" height="400"></canvas>
+
+</body>
+
+<script type="text/javascript">
+  // See the Configuring section to configure credentials in the SDK
+        AWS.config.accessKeyId = 'AKIAJNZBFEQORVJAIXNA';
+        AWS.config.secretAccessKey = 'uZiqn0kZEAmjMxiFOcaby4G2a+IgO1VKJTOxw92U';
+
+		  // Configure your region
+		  AWS.config.region = 'us-west-2';
+
+</script>
+
+
+
+
+ <script type="text/javascript">
+ var bucket = new AWS.S3({params: {Bucket: 'blackjack-movieminer'}});
+
+ var params = {
+  Bucket: 'blackjack-movieminer', // required
+  Key: 'AnalysisOutput/mpaa_analyzer.json' ,// required
+
+};
+
+response =bucket.getObject(params, function(err, data) {
+  if (err) {
+  console.log(err, err.stack); 
+   // document.getElementById('status').innerHTML =
+   //     'Could not load objects from S3';
+  }// an error occurred
+  else{
+      // successful response
+
+       //document.getElementById('status').innerHTML =
+       //data.Body.toString();
+       obj = jQuery.parseJSON(data.Body.toString());
+
+       //display_title = obj.results[0].display_title;
+var thirtiesG=0;
+var thirtiesPG=0;
+var thirtiesPG13=0;
+var thirtiesR=0;
+var thirtiesN=0;
+for (var i =1930;i<1940;i++){
+  thirtiesG += obj[i].G.Count;
+}
+
+for (var i =1930;i<1940;i++){
+  thirtiesN += obj[i].None.Count;
+}
+for (var i =1930;i<1940;i++){
+  thirtiesPG += obj[i].PG.Count;
+}
+for (var i =1930;i<1940;i++){
+  thirtiesPG13 += obj[i].PG13.Count;
+}
+for (var i =1930;i<1940;i++){
+  thirtiesR += obj[i].R.Count;
+}
+
+var fourtiesG=0;
+var fourtiesPG=0;
+var fourtiesPG13=0;
+var fourtiesR=0;
+var fourtiesN=0;
+for (var i =1940;i<1950;i++){
+  fourtiesG += obj[i].G.Count;
+}
+
+for (var i =1940;i<1950;i++){
+  fourtiesN += obj[i].None.Count;
+}
+
+for (var i =1940;i<1950;i++){
+  fourtiesPG += obj[i].PG.Count;
+}
+
+for (var i =1940;i<1950;i++){
+  fourtiesPG13 += obj[i].PG13.Count;
+}
+
+for (var i =1940;i<1950;i++){
+  fourtiesR += obj[i].R.Count;
+}
+
+var fiftiesG=0;
+var fiftiesPG=0;
+var fiftiesPG13=0;
+var fiftiesR=0;
+var fiftiesN=0;
+for (var i =1950;i<1960;i++){
+  fiftiesG += obj[i].G.Count;
+}
+
+for (var i =1950;i<1960;i++){
+  fiftiesN += obj[i].None.Count;
+}
+
+for (var i =1950;i<1960;i++){
+  fiftiesPG += obj[i].PG.Count;
+}
+
+for (var i =1950;i<1960;i++){
+  fiftiesPG13 += obj[i].PG13.Count;
+}
+
+for (var i =1950;i<1960;i++){
+  fiftiesR += obj[i].R.Count;
+}
+
+var sixG=0;
+var sixPG=0;
+var sixPG13=0;
+var sixR=0;
+var sixN=0;
+for (var i =1960;i<1970;i++){
+  sixG += obj[i].G.Count;
+}
+
+for (var i =1960;i<1970;i++){
+  sixN += obj[i].None.Count;
+}
+
+for (var i =1960;i<1970;i++){
+  sixPG += obj[i].PG.Count;
+}
+for (var i =1960;i<1970;i++){
+  sixPG13 += obj[i].PG13.Count;
+}
+for (var i =1960;i<1970;i++){
+  sixR += obj[i].R.Count;
+}
+
+var sevG=0;
+var sevPG=0;
+var sevPG13=0;
+var sevR=0;
+var sevN=0;
+for (var i =1970;i<1980;i++){
+  sevG += obj[i].G.Count;
+}
+
+for (var i =1970;i<1980;i++){
+  sevN += obj[i].None.Count;
+}
+
+for (var i =1970;i<1980;i++){
+  sevPG += obj[i].PG.Count;
+}
+
+for (var i =1970;i<1980;i++){
+  sevPG13 += obj[i].PG13.Count;
+}
+for (var i =1970;i<1980;i++){
+  sevR += obj[i].R.Count;
+}
+
+var eightG=0;
+var eightPG=0;
+var eightPG13=0;
+var eightR=0;
+var eightN=0;
+
+for (var i =1980;i<1990;i++){
+  eightG += obj[i].G.Count;
+}
+
+for (var i =1980;i<1990;i++){
+  eightN += obj[i].None.Count;
+}
+
+for (var i =1980;i<1990;i++){
+  eightPG += obj[i].PG.Count;
+}
+
+for (var i =1980;i<1990;i++){
+  eightPG13 += obj[i].PG13.Count;
+}
+
+for (var i =1980;i<1990;i++){
+  eightR += obj[i].R.Count;
+}
+
+var nineG=0;
+var ninePG=0;
+var ninePG13=0;
+var nineR=0;
+var nineN=0;
+
+for (var i =1990;i<2000;i++){
+  nineG += obj[i].G.Count;
+}
+
+for (var i =1990;i<2000;i++){
+  nineN += obj[i].None.Count;
+}
+
+for (var i =1990;i<2000;i++){
+  ninePG += obj[i].PG.Count;
+}
+
+for (var i =1990;i<2000;i++){
+  ninePG13 += obj[i].PG13.Count;
+}
+
+for (var i =1990;i<2000;i++){
+  nineR += obj[i].R.Count;
+}
+
+var tenG=0;
+var tenPG=0;
+var tenPG13=0;
+var tenR=0;
+var tenN=0;
+for (var i =2000;i<2010;i++){
+  tenG += obj[i].G.Count;
+}
+
+for (var i =2000;i<2010;i++){
+  tenN += obj[i].None.Count;
+}
+
+for (var i =2000;i<2010;i++){
+  tenPG += obj[i].PG.Count;
+}
+
+for (var i =2000;i<2010;i++){
+  tenPG13 += obj[i].PG13.Count;
+}
+
+for (var i =2000;i<2010;i++){
+  tenR += obj[i].R.Count;
+}
+
+var elG=0;
+var elPG=0;
+var elPG13=0;
+var elR=0;
+var elN=0;
+for (var i =2010;i<2015;i++){
+  elG += obj[i].G.Count;
+}
+
+for (var i =2010;i<2015;i++){
+  elN += obj[i].None.Count;
+}
+
+for (var i =2010;i<2015;i++){
+  elPG += obj[i].PG.Count;
+}
+
+for (var i =2010;i<2015;i++){
+  elPG13 += obj[i].PG13.Count;
+}
+
+for (var i =2010;i<2015;i++){
+  elR += obj[i].R.Count;
+}
+
+    
+  var threeD = {
+  labels : ["G","PG","PG13","R","None"],
+  datasets : [
+  {
+            fillColor : "rgba(220,220,220,0.5)",
+            strokeColor : "rgba(220,220,220,1)",
+            data : [thirtiesG,thirtiesPG,thirtiesPG13,thirtiesR,thirtiesN]
+    }
+  ]
+};
+
+    var three = document.getElementById('three').getContext('2d');
+    new Chart(three).Bar(threeD);
+
+
+      var fourD = {
+      labels : ["G","PG","PG13","R","None"],
+      datasets : [
+      {
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                data : [fortiesG,fourtiesPG,fourtiesPG13,fourtiesR,fourtiesN]
+        }
+      ]
+    };
+
+    var four = document.getElementById('four').getContext('2d');
+    new Chart(four).Bar(fourD);
+
+    var fiveD = {
+    labels : ["G","PG","PG13","R","None"],
+    datasets : [
+    {
+              fillColor : "rgba(220,220,220,0.5)",
+              strokeColor : "rgba(220,220,220,1)",
+              data : [fiftiesG,fiftiesPG,fiftiesPG13,fiftiesR,fiftiesN]
+      }
+    ]
+  };
+
+    var five = document.getElementById('five').getContext('2d');
+    new Chart(five).Bar(fiveD);
+
+    var sixD = {
+    labels : ["G","PG","PG13","R","None"],
+    datasets : [
+    {
+              fillColor : "rgba(220,220,220,0.5)",
+              strokeColor : "rgba(220,220,220,1)",
+              data : [sixG,sixPG,sixPG13,sixR,sixN]
+      }
+    ]
+  };
+
+    var six = document.getElementById('six').getContext('2d');
+    new Chart(six).Bar(sixD);
+
+    var sevD = {
+    labels : ["G","PG","PG13","R","None"],
+    datasets : [
+    {
+              fillColor : "rgba(220,220,220,0.5)",
+              strokeColor : "rgba(220,220,220,1)",
+              data : [sevG,sevPG,sevPG13,sevR,sevN]
+      }
+    ]
+  };
+
+    var sev = document.getElementById('seven').getContext('2d');
+    new Chart(sev).Bar(sevD);
+
+    var eightD = {
+    labels : ["G","PG","PG13","R","None"],
+    datasets : [
+    {
+              fillColor : "rgba(220,220,220,0.5)",
+              strokeColor : "rgba(220,220,220,1)",
+              data : [eightG,eightPG,eightPG13,eightR,eightN]
+      }
+    ]
+  };
+
+    var eight = document.getElementById('eight').getContext('2d');
+    new Chart(eight).Bar(eightD);
+
+
+      var nineD = {
+    labels : ["G","PG","PG13","R","None"],
+    datasets : [
+    {
+              fillColor : "rgba(220,220,220,0.5)",
+              strokeColor : "rgba(220,220,220,1)",
+              data : [nineG,ninePG,ninePG13,nineR,nineN]
+      }
+    ]
+  };
+    var nine = document.getElementById('nineD').getContext('2d');
+    new Chart(ine).Bar(nineD);
+
+
+      var tenD = = {
+      labels : ["G","PG","PG13","R","None"],
+      datasets : [
+      {
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                data : [tenG,tenPG,tenPG13,tenR,tenN]
+        }
+      ]
+    };
+    var ten = document.getElementById('tenD').getContext('2d');
+    new Chart(ten).Bar(tenD);
+
+      var elD = {
+      labels : ["G","PG","PG13","R","None"],
+      datasets : [
+      {
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                data : [elG,elPG,elPG13,elR,elN]
+        }
+      ]
+    };
+    var el = document.getElementById('elD').getContext('2d');
+    new Chart(el).Bar(elD);
+
+
+  }
+});
+
+
+  // bucket.listObjects(function (err, data) {
+  //   if (err) {
+  //     document.getElementById('status').innerHTML =
+  //       'Could not load objects from S3';
+  //   } else {
+  //     document.getElementById('status').innerHTML =
+  //       'Loaded ' + data.Contents.length + ' items from S3';
+  //     for (var i = 0; i < data.Contents.length; i++) {
+  //       document.getElementById('objects').innerHTML +=
+  //         '<li>' + data.Contents[i].Key + '</li>';
+  //     }
+  //   }
+  // });
+// </script>
+
+</html>
