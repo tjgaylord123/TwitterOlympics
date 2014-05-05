@@ -50,85 +50,44 @@ response =bucket.getObject(params, function(err, data) {
 
        //display_title = obj.results[0].display_title;
 var thirtiesY=0;
-var thirtiesN=0;
-for (var i =1930;i<1940;i++){
+for (var i =1930;i<1931;i++){
   thirtiesY += obj[i].Yes.Count;
 }
 
-for (var i =1930;i<1940;i++){
-  thirtiesN += obj[i].No.Count;
-}
-console.log()
 var fourtiesY=0;
-var fourtiesN=0;
-for (var i =1940;i<1950;i++){
+for (var i =1940;i<1941;i++){
   fourtiesY += obj[i].Yes.Count;
 }
 
-for (var i =1940;i<1950;i++){
-  fourtiesN += obj[i].No.Count;
-}
-
 var fiftiesY=0;
-var fiftiesN=0;
-for (var i =1950;i<1960;i++){
+for (var i =1950;i<1951;i++){
   fiftiesY += obj[i].Yes.Count;
 }
 
-for (var i =1950;i<1960;i++){
-  fiftiesN += obj[i].No.Count;
-}
-
 var sixY=0;
-var sixN=0;
-for (var i =1960;i<1970;i++){
+for (var i =1960;i<1961;i++){
   sixY += obj[i].Yes.Count;
 }
 
-for (var i =1960;i<1970;i++){
-  sixN += obj[i].No.Count;
-}
-
 var sevY=0;
-var sevN=0;
-for (var i =1970;i<1980;i++){
+for (var i =1970;i<1971;i++){
   sevY += obj[i].Yes.Count;
 }
 
-for (var i =1970;i<1980;i++){
-  sevN += obj[i].No.Count;
-}
-
 var eightY=0;
-var eightN=0;
-for (var i =1980;i<1990;i++){
+for (var i =1980;i<1981;i++){
   eightY += obj[i].Yes.Count;
 }
 
-for (var i =1980;i<1990;i++){
-  eightN += obj[i].No.Count;
-}
-
 var nineY=0;
-var nineN=0;
-for (var i =1990;i<2000;i++){
+for (var i =1990;i<1991;i++){
   nineY += obj[i].Yes.Count;
 }
 
-for (var i =1990;i<2000;i++){
-  nineN += obj[i].No.Count;
-}
-
 var tenY=0;
-var tenN=0;
-for (var i =2000;i<2010;i++){
+for (var i =2000;i<2001;i++){
   tenY += obj[i].Yes.Count;
 }
-
-for (var i =2000;i<2010;i++){
-  tenN += obj[i].No.Count;
-}
-
     
 	var GenreData = {
 	labels : ["30's","40's","50's","60's","70's","80's","90's","00-02"],
