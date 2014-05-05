@@ -68,6 +68,10 @@
       <Project>{ef966091-da35-4951-8159-34cf398454ee}</Project>
       <Name>MovieMiner.Modules.NewYorkTimes</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MovieMiner.Modules.RottenTomatoes\MovieMiner.Modules.RottenTomatoes.csproj">
+      <Project>{ce455c50-600c-48a2-8d3e-f8c3f92d0ef8}</Project>
+      <Name>MovieMiner.Modules.RottenTomatoes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MovieMiner.Storage\MovieMiner.Storage.csproj">
       <Project>{9a6ed01c-734d-4718-8242-f7ea2f4ccaee}</Project>
       <Name>MovieMiner.Storage</Name>

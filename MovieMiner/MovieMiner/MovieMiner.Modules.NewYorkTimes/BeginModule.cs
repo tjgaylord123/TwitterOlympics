@@ -31,26 +31,29 @@ namespace MovieMiner.Modules.NewYorkTimes
 
             Parallel.ForEach(allDates, async date =>
             {
-                HttpClient httpClient = new HttpClient { BaseAddress = new Uri(BaseAddress) };
-                httpClient.DefaultRequestHeaders.Accept.Clear();
-                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    HttpClient httpClient = new HttpClient {BaseAddress = new Uri(BaseAddress)};
+                    httpClient.DefaultRequestHeaders.Accept.Clear();
+                    httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                IStorageClient storageClient = (IStorageClient)Activator.CreateInstance(typeof(TStorage), new object[] { directory });
+                    IStorageClient storageClient =
+                        (IStorageClient) Activator.CreateInstance(typeof (TStorage), new object[] {directory});
+                    var response =
+                        await httpClient.GetAsync(
+                            string.Format("/svc/movies/v2/reviews/search.json?opening-date={0}-{1}-{2}&api-key={3}",
+                                date.Year,
+                                date.Month < 10 ? string.Format("0{0}", date.Month) : Convert.ToString(date.Month),
+                                date.Day < 10 ? string.Format("0{0}", date.Day) : Convert.ToString(date.Day), APIKey));
+                    if (!response.IsSuccessStatusCode) return;
 
-                var response =
-                    await httpClient.GetAsync(
-                        string.Format("/svc/movies/v2/reviews/search.json?opening-date={0}-{1}-{2}&api-key={3}",
-                            date.Year,
-                            date.Month < 10 ? string.Format("0{0}", date.Month) : Convert.ToString(date.Month),
-                            date.Day < 10 ? string.Format("0{0}", date.Day) : Convert.ToString(date.Day), APIKey));
-                if (!response.IsSuccessStatusCode) return;
+                    string jsonBody = await response.Content.ReadAsStringAsync();
+                    await storageClient.WriteFileToStorageAsync(jsonBody, date.Date, FileType.Json);
 
-                string jsonBody = await response.Content.ReadAsStringAsync();
-                await storageClient.WriteFileToStorageAsync(jsonBody, date.Date, FileType.Json);
-
-                httpClient.Dispose();
-                storageClient.Dispose();
-    
+                    httpClient.Dispose();
+                    storageClient.Dispose();
+                }
+                catch { }
             });
         }
 
