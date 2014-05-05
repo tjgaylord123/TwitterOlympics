@@ -11,15 +11,15 @@ using Newtonsoft.Json;
 namespace MovieAnalyzer.Modules.NewYorkTimes
 {
     [Export(typeof(IJobModule))]
-    public class ThousandsListAnalyzerJob : IJobModule
+    public class MPAAAnalyzerJob : IJobModule
     {
         private IStorageClient _storageClient;
-        private Dictionary<string, ThousandsList> _thousandsLists;
+        private Dictionary<string, MPAA> _mpaaList;
 
         public async Task BeginJobModule(IStorageClient storageClient)
         {
             _storageClient = storageClient;
-            _thousandsLists = new Dictionary<string, ThousandsList>();
+            _mpaaList = new Dictionary<string, MPAA>();
 
             // Get every file name in the main directory
             object lockObject = new object();
@@ -42,8 +42,6 @@ namespace MovieAnalyzer.Modules.NewYorkTimes
 
                 foreach (var movie in movies.results)
                 {
-                    int yesNo;
-                    if (!int.TryParse(movie.thousand_best, out yesNo)) continue;
 
                     DateTime date;
                     if (!DateTime.TryParse(movie.publication_date, out date)) continue;
@@ -51,27 +49,33 @@ namespace MovieAnalyzer.Modules.NewYorkTimes
                     string key = Convert.ToString(date.Date.Year);
                     lock (lockObject)
                     {
-                        if (!_thousandsLists.ContainsKey(key))
+                        if (!_mpaaList.ContainsKey(key))
                         {
-                            _thousandsLists.Add(key, new ThousandsList
+                            _mpaaList.Add(key, new MPAA
                             {
-                                Yes = new Yes
-                                {
-                                    Count = 0
-                                },
-                                No = new No
-                                {
-                                    Count = 0
-                                }
+                                G = new G {Count = 0},
+                                PG = new PG {Count = 0},
+                                PG13 = new PG13 {Count = 0},
+                                R = new R {Count = 0},
+                                None = new None {  Count = 0}
                             });
                         }
-                        switch (yesNo)
+                        switch (movie.mpaa_rating)
                         {
-                            case 0:
-                                _thousandsLists[key].No.Count++;
+                            case "G":
+                                _mpaaList[key].G.Count++;
                                 break;
-                            case 1:
-                                _thousandsLists[key].Yes.Count++;
+                            case "PG":
+                                _mpaaList[key].PG.Count++;
+                                break;
+                            case "PG13":
+                                _mpaaList[key].PG13.Count++;
+                                break;
+                            case "R":
+                                _mpaaList[key].R.Count++;
+                                break;
+                            default:
+                                _mpaaList[key].None.Count++;
                                 break;
                         }
                     }
@@ -79,9 +83,9 @@ namespace MovieAnalyzer.Modules.NewYorkTimes
                 }
             });
 
-            string json = JsonConvert.SerializeObject(_thousandsLists, Formatting.Indented);
-            await _storageClient.WriteFileToStorageAsync(json, "thousands_list", FileType.Json, true);
-        }
+            string json = JsonConvert.SerializeObject(_mpaaList, Formatting.Indented);
+            await _storageClient.WriteFileToStorageAsync(json, "mpaa_analyzer", FileType.Json, true);
+    }
 
         public string ModuleName
         {
@@ -108,18 +112,40 @@ namespace MovieAnalyzer.Modules.NewYorkTimes
 
         #region Helpers
 
-        private class ThousandsList
+        private class MPAA
         {
-            public Yes Yes { get; set; }
-            public No No { get; set; }
+            public G G { get; set; }
+
+            public PG PG { get; set; }
+
+            public PG13 PG13 { get; set; }
+
+            public R R { get; set; }
+
+            public None None { get; set; }
         }
 
-        private class Yes
+        private class G
         {
             public int Count { get; set; }
         }
 
-        private class No
+        private class PG
+        {
+            public int Count { get; set; }
+        }
+
+        private class PG13
+        {
+            public int Count { get; set; }
+        }
+
+        private class R
+        {
+            public int Count { get; set; }
+        }
+
+        private class None
         {
             public int Count { get; set; }
         }

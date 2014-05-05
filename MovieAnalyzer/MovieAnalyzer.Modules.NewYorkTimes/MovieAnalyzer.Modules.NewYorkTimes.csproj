@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MPAAAnalyzerJob.cs" />
     <Compile Include="ThousandsListAnalyzerJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

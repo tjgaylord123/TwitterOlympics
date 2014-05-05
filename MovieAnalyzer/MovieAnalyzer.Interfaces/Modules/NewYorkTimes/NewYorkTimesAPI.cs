@@ -17,6 +17,8 @@ namespace MovieAnalyzer.Interfaces.Modules.NewYorkTimes
         public string thousand_best { get; set; }
 
         public string publication_date { get; set; }
+
+        public string mpaa_rating { get; set; }
     }
 
 }
