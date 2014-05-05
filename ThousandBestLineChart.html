@@ -129,24 +129,14 @@ for (var i =2000;i<2010;i++){
   tenN += obj[i].No.Count;
 }
 
-var elY=0;
-var elN=0;
-for (var i =2010;i<2015;i++){
-  elY += obj[i].Yes.Count;
-}
-
-for (var i =2010;i<2015;i++){
-  elN += obj[i].No.Count;
-}
-
     
 	var GenreData = {
-	labels : ["30's","40's","50's","60's","70's","80's","90's","00's","10's"],
+	labels : ["30's","40's","50's","60's","70's","80's","90's","00-02"],
 	datasets : [
 	{
             fillColor : "rgba(220,220,220,0.5)",
             strokeColor : "rgba(220,220,220,1)",
-            data : [thirtiesY,fourtiesY,fiftiesY,sixY,sevY,eightY,nineY,tenY,elY]
+            data : [thirtiesY,fourtiesY,fiftiesY,sixY,sevY,eightY,nineY,tenY]
     }
 	]
 }
