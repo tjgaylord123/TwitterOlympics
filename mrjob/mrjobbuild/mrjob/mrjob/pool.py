@@ -59,7 +59,7 @@ def pool_hash_and_name(job_flow):
     bootstrap_actions = getattr(job_flow, 'bootstrapactions', None)
     if bootstrap_actions:
         for bootstrap_action in bootstrap_actions:
-            if bootstrap_action.name == 'master':
+            if bootstrap_action.name == 'main':
                 args = [arg.value for arg in bootstrap_action.args]
                 if len(args) == 2 and args[0].startswith('pool-'):
                     return args[0][5:], args[1]
